@@ -1,2 +1,17 @@
-# leningradskiy-polimer-site
-Corporate website for Leningradskiy Polimer
+# ЛЕНИНГРАДСКИЙ ПОЛИМЕР — сайт компании
+
+Тестовая версия корпоративного сайта для размещения на Cloudflare Pages.
+
+## Структура
+
+- `index.html` — главная страница
+- `style.css` — стили сайта
+- `script.js` — простая логика формы
+
+## Деплой
+
+Проект рассчитан на публикацию через Cloudflare Pages.
+
+Для статического сайта:
+- Build command: пусто
+- Output directory: `/`
