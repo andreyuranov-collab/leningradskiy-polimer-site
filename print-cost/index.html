@@ -86,31 +86,13 @@
       <div class="metric"><span>Цена за деталь</span><strong id="finalUnitPrice">—</strong></div>
     </section>
 
-    <section class="grid grid-2">
-      <div class="card">
-        <h2>Расшифровка расчёта</h2>
-        <div class="table-wrap"><table><tbody id="breakdownRows"></tbody></table></div>
-      </div>
-      <div class="card">
-        <h2>Данные из G-code</h2>
-        <div class="table-wrap"><table><tbody id="gcodeRows"></tbody></table></div>
-      </div>
-    </section>
-
-    <section class="card">
-      <h2>Настройки расчёта</h2>
-      <div class="form-grid compact">
-        <label>Электроэнергия, ₽/кВт·ч<input id="rule_electricity_rate" type="number" step="0.01" /></label>
-        <label>Ставка оператора, ₽/ч<input id="rule_operator_rate" type="number" step="0.01" /></label>
-        <label>Коммерческий коэффициент<input id="rule_commercial_coef" type="number" step="0.01" /></label>
-        <label>Минимум FDM, ₽ с НДС<input id="rule_min_order_fdm" type="number" step="1" /></label>
-        <label>НДС, доля<input id="rule_vat_rate" type="number" step="0.01" /></label>
-      </div>
-      <p class="muted">Эти значения можно менять прямо на странице. В публичной версии сайта они видны пользователям в коде страницы.</p>
+    <section class="card public-summary">
+      <h2>Итог расчёта</h2>
+      <p>Стоимость рассчитана по действующим параметрам НПО «ЛЕНИНГРАДСКИЙ ПОЛИМЕР». Служебная расшифровка, данные G-code и настройки расчёта скрыты из публичного интерфейса.</p>
     </section>
   </main>
 
-  <footer class="lp-footer">LP_PrintCostWebApp_v00.01_test · тестовая версия · Характеристики вместо маркетинга</footer>
+  <footer class="lp-footer">LP_PrintCostWebApp_v00.02_test · тестовая версия · Характеристики вместо маркетинга</footer>
 
   <script src="https://cdn.jsdelivr.net/npm/jszip@3.10.1/dist/jszip.min.js"></script>
   <script src="./assets/app.js"></script>

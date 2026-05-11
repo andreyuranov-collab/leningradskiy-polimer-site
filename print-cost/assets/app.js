@@ -1,4 +1,5 @@
 const state = { db:null, parsed:null, materialsRows:[] };
+const ADMIN_CONFIG_KEY = 'lp_print_cost_admin_config_v1';
 const $ = (id) => document.getElementById(id);
 const nfRub = new Intl.NumberFormat('ru-RU',{style:'currency',currency:'RUB',maximumFractionDigits:0});
 const nf = new Intl.NumberFormat('ru-RU',{maximumFractionDigits:2});
@@ -119,6 +120,7 @@ function renderMaterialRows(){
   tbody.querySelectorAll('[data-remove]').forEach(el=>el.addEventListener('click',e=>{ state.materialsRows.splice(Number(e.target.dataset.remove),1); if(!state.materialsRows.length) state.materialsRows.push({name:$('material').value,grams:num($('gramsPerPlate').value)}); renderMaterialRows(); update(); }));
 }
 function renderGcodeRows(){
+  if(!$('gcodeRows')) return;
   const p=state.parsed; const rows=[];
   if(p){ rows.push(['Файл',p.file_path],['Слайсер',p.slicer||'не определён'],['Принтер',p.printer_model||p.printer_settings_id||'не определён'],['Время',p.estimated_time_text||'не найдено'],['Время, ч',p.estimated_time_hours===null?'':nf.format(p.estimated_time_hours)],['Материалы',p.filament_types||'не найдены'],['Цвета',p.filament_colours||'не найдены'],['Общий расход, г',p.total_filament_g===null?'':nf.format(p.total_filament_g)],['Расход по материалам',p.materials_g||'не найден'],['Поддержки',p.has_supports?'есть':'нет/не найдено'],['Brim',p.has_brim?'есть':'нет/не найдено'],['Raft',p.has_raft?'есть':'нет/не найдено'],['Prime/Wipe tower',p.has_prime_tower?'есть':'нет/не найдено'],['Purge/Flush',p.has_purge_flush?'есть':'нет/не найдено'],['Миниатюра',p.has_thumbnail?'есть':'нет'],['Предупреждения',p.warnings||'—']); }
   $('gcodeRows').innerHTML=rows.length?rows.map(r=>`<tr><th>${escapeHtml(r[0])}</th><td>${escapeHtml(r[1])}</td></tr>`).join(''):'<tr><td class="muted">Данные появятся после загрузки G-code.</td></tr>';
@@ -130,13 +132,13 @@ function renderBadges(){
 }
 function update(){
   if(!state.db) return;
-  ['electricity_rate','operator_rate','commercial_coef','min_order_fdm','vat_rate'].forEach(k=>state.db.rules[k]=num($('rule_'+k).value));
+  ['electricity_rate','operator_rate','commercial_coef','min_order_fdm','vat_rate'].forEach(k=>{ const el=$('rule_'+k); if(el) state.db.rules[k]=num(el.value); });
   if(state.materialsRows[0]){ state.materialsRows[0].name=$('material').value; state.materialsRows[0].grams=num($('gramsPerPlate').value); }
   const order={print_type:$('printType').value,machine:$('machine').value,material:$('material').value,material_grams_per_plate:num($('gramsPerPlate').value),hours_per_plate:num($('hoursPerPlate').value),parts_per_plate:num($('partsPerPlate').value),total_parts:num($('totalParts').value),fdm_postprocess:$('fdmPostprocess').value==='true',materials:state.materialsRows};
   const c=calculate(order,state.db.machines,state.db.materials,state.db.rules);
   $('productionCost').textContent=nfRub.format(c.production_cost); $('finalPrice').textContent=nfRub.format(c.final_price); $('finalUnitPrice').textContent=nfRub.format(c.final_unit_price);
   const rows=[['Пластин / запусков',c.plates],['Материал, всего',nf.format(c.total_material_grams)+' г'],['Время, всего',nf.format(c.total_hours)+' ч'],['Материал основной',nfRub.format(c.material_main)],['Материал 2 / поддержки',nfRub.format(c.material_second)],['Электроэнергия печати',nfRub.format(c.print_electricity)],['Амортизация станка',nfRub.format(c.machine_depreciation)],['Сушка материала',nfRub.format(c.drying)],['Адгезия / клей',nfRub.format(c.adhesion)],['Износ сопла композиты',nfRub.format(c.nozzle_wear)],['Оператор FDM',nfRub.format(c.fdm_operator)],['Себестоимость',nfRub.format(c.production_cost)],['Коммерческая цена по коэффициенту',nfRub.format(c.commercial_by_margin)],['Минимальный заказ',nfRub.format(c.minimum_order)],['Применён минимум',c.minimum_applied?'да':'нет'],['НДС в цене',nfRub.format(c.vat_amount_included)]];
-  $('breakdownRows').innerHTML=rows.map(r=>`<tr><th>${escapeHtml(r[0])}</th><td>${escapeHtml(r[1])}</td></tr>`).join('');
+  if($('breakdownRows')) $('breakdownRows').innerHTML=rows.map(r=>`<tr><th>${escapeHtml(r[0])}</th><td>${escapeHtml(r[1])}</td></tr>`).join('');
   renderMaterialRows(); renderGcodeRows(); renderBadges();
 }
 async function handleFile(file){
@@ -164,11 +166,12 @@ function applyParsed(parsed){
 }
 async function init(){
   state.db=await fetch('./data/defaults.json').then(r=>r.json());
+  try { const saved=localStorage.getItem(ADMIN_CONFIG_KEY); if(saved) state.db=JSON.parse(saved); } catch(e) { console.warn('Admin config is not applied:', e); }
   setOptions($('printType'),['FDM','Фотополимер'],state.db.ui_defaults.print_type);
   setOptions($('machine'),Object.keys(state.db.machines),state.db.ui_defaults.machine);
   setOptions($('material'),Object.keys(state.db.materials),state.db.ui_defaults.material);
   $('gramsPerPlate').value=50; $('hoursPerPlate').value=state.db.ui_defaults.hours_per_plate; $('partsPerPlate').value=state.db.ui_defaults.parts_per_plate; $('totalParts').value=state.db.ui_defaults.total_parts; $('fdmPostprocess').value='true';
-  ['electricity_rate','operator_rate','commercial_coef','min_order_fdm','vat_rate'].forEach(k=>{$('rule_'+k).value=state.db.rules[k]});
+  ['electricity_rate','operator_rate','commercial_coef','min_order_fdm','vat_rate'].forEach(k=>{ const el=$('rule_'+k); if(el) el.value=state.db.rules[k]; });
   state.materialsRows=[{name:$('material').value,grams:num($('gramsPerPlate').value)}]; renderMaterialRows(); update();
   document.querySelectorAll('input,select').forEach(el=>{ if(el.id!=='fileInput') el.addEventListener('input', update); });
   $('fileInput').addEventListener('change',e=>{ const f=e.target.files?.[0]; if(f) handleFile(f).catch(err=>{$('fileStatus').innerHTML='<span class="danger">Ошибка чтения файла: '+escapeHtml(err.message)+'</span>';}); });

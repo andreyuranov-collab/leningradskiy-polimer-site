@@ -1,0 +1,86 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Администрирование калькулятора — ЛЕНИНГРАДСКИЙ ПОЛИМЕР</title>
+  <meta name="robots" content="noindex,nofollow" />
+  <link rel="stylesheet" href="./assets/styles.css" />
+</head>
+<body>
+  <header class="lp-header">
+    <div class="lp-header__inner">
+      <img class="lp-logo" src="./assets/lp_logo.png" alt="ЛЕНИНГРАДСКИЙ ПОЛИМЕР" />
+      <div>
+        <div class="eyebrow">Служебная страница</div>
+        <h1>Администрирование калькулятора</h1>
+        <p>Редактирование материалов, станков и правил расчёта. Тестовый вход: admin / admin.</p>
+      </div>
+    </div>
+  </header>
+
+  <main class="container">
+    <section id="loginCard" class="card admin-login">
+      <h2>Вход</h2>
+      <div class="form-grid compact-2">
+        <label>Логин<input id="loginUser" type="text" autocomplete="username" value="admin" /></label>
+        <label>Пароль<input id="loginPass" type="password" autocomplete="current-password" value="admin" /></label>
+      </div>
+      <div class="admin-actions">
+        <button id="loginBtn" class="button" type="button">Войти</button>
+        <span id="loginStatus" class="muted"></span>
+      </div>
+      <p class="muted">Важно: это тестовая клиентская авторизация для проверки интерфейса. Для настоящей защиты коммерческих данных нужна серверная авторизация через Cloudflare Access/Workers.</p>
+    </section>
+
+    <section id="adminPanel" class="admin-hidden">
+      <section class="notice">
+        <strong>Как применять изменения:</strong> кнопка «Сохранить в браузере» применит данные на этом компьютере. Для обновления сайта для всех пользователей скачайте `defaults.json` и замените файл `print-cost/data/defaults.json` в GitHub-репозитории.
+      </section>
+
+      <section class="card">
+        <div class="section-title">
+          <h2>Правила расчёта</h2>
+          <button id="resetConfig" class="button button-secondary" type="button">Сбросить локальные правки</button>
+        </div>
+        <div class="form-grid compact">
+          <label>Электроэнергия, ₽/кВт·ч<input id="rule_electricity_rate" type="number" step="0.01" /></label>
+          <label>Ставка оператора, ₽/ч<input id="rule_operator_rate" type="number" step="0.01" /></label>
+          <label>Коммерческий коэффициент<input id="rule_commercial_coef" type="number" step="0.01" /></label>
+          <label>Минимум FDM, ₽ с НДС<input id="rule_min_order_fdm" type="number" step="1" /></label>
+          <label>НДС, доля<input id="rule_vat_rate" type="number" step="0.01" /></label>
+        </div>
+      </section>
+
+      <section class="card">
+        <div class="section-title">
+          <h2>Материалы</h2>
+          <button id="addMaterial" class="button button-secondary" type="button">Добавить материал</button>
+        </div>
+        <div class="table-wrap"><table><thead><tr><th>Название</th><th>Цена, ₽/кг</th><th>Потери, доля</th><th>Сушка, ₽/кг</th><th>Адгезия, ₽/пластина</th><th></th></tr></thead><tbody id="materialsAdminRows"></tbody></table></div>
+      </section>
+
+      <section class="card">
+        <div class="section-title">
+          <h2>Станки</h2>
+          <button id="addMachine" class="button button-secondary" type="button">Добавить станок</button>
+        </div>
+        <div class="table-wrap"><table><thead><tr><th>Название</th><th>Мощность, кВт</th><th>Амортизация, ₽/ч</th><th></th></tr></thead><tbody id="machinesAdminRows"></tbody></table></div>
+      </section>
+
+      <section class="card">
+        <h2>Сохранение</h2>
+        <div class="admin-actions">
+          <button id="saveLocal" class="button" type="button">Сохранить в браузере</button>
+          <button id="downloadJson" class="button button-secondary" type="button">Скачать defaults.json</button>
+          <button id="logoutBtn" class="button button-secondary" type="button">Выйти</button>
+        </div>
+        <p id="saveStatus" class="muted"></p>
+      </section>
+    </section>
+  </main>
+
+  <footer class="lp-footer">LP_PrintCostWebApp_v00.02_test · административная страница</footer>
+  <script src="./assets/admin.js"></script>
+</body>
+</html>
