@@ -1,0 +1,118 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Калькулятор стоимости 3D-печати — ЛЕНИНГРАДСКИЙ ПОЛИМЕР</title>
+  <meta name="description" content="Расчёт стоимости FDM/FFF 3D-печати по G-code и ручным параметрам." />
+  <link rel="stylesheet" href="./assets/styles.css" />
+</head>
+<body>
+  <header class="lp-header">
+    <div class="lp-header__inner">
+      <img class="lp-logo" src="./assets/lp_logo.png" alt="ЛЕНИНГРАДСКИЙ ПОЛИМЕР" />
+      <div>
+        <div class="eyebrow">НПО «ЛЕНИНГРАДСКИЙ ПОЛИМЕР»</div>
+        <h1>Калькулятор стоимости 3D-печати</h1>
+        <p>Тестовая веб-версия расчёта: загрузите G-code или заполните параметры вручную.</p>
+      </div>
+    </div>
+  </header>
+
+  <main class="container">
+    <section class="notice">
+      <strong>Важно:</strong> расчёт выполняется локально в браузере. Файл печати не отправляется на сервер. STL без слайсинга не содержит времени, поддержек и траекторий, поэтому для STL используйте ручной ввод параметров после слайсера.
+    </section>
+
+    <section class="grid grid-2">
+      <div class="card">
+        <h2>1. Файл печати</h2>
+        <label class="dropzone" for="fileInput">
+          <input id="fileInput" type="file" accept=".gcode,.gco,.gc,.3mf,.stl,.txt" />
+          <span class="dropzone__title">Выберите G-code / 3MF / STL</span>
+          <span class="dropzone__hint">G-code читается автоматически. 3MF поддерживается частично: если внутри есть G-code, он будет извлечён. STL — только ручной расчёт.</span>
+        </label>
+        <div id="fileStatus" class="muted">Файл не выбран.</div>
+        <div class="mini-grid" id="parsedBadges"></div>
+      </div>
+
+      <div class="card">
+        <h2>2. Основные параметры</h2>
+        <div class="form-grid">
+          <label>Технология
+            <select id="printType"></select>
+          </label>
+          <label>Станок
+            <select id="machine"></select>
+          </label>
+          <label>Материал
+            <select id="material"></select>
+          </label>
+          <label>Расход на пластину, г
+            <input id="gramsPerPlate" type="number" step="0.01" min="0" />
+          </label>
+          <label>Время на пластину, ч
+            <input id="hoursPerPlate" type="number" step="0.01" min="0" />
+          </label>
+          <label>Деталей на пластине
+            <input id="partsPerPlate" type="number" step="1" min="1" />
+          </label>
+          <label>Всего деталей
+            <input id="totalParts" type="number" step="1" min="1" />
+          </label>
+          <label>Постобработка FDM
+            <select id="fdmPostprocess"><option value="true">Да</option><option value="false">Нет</option></select>
+          </label>
+        </div>
+      </div>
+    </section>
+
+    <section class="card" id="materialsCard">
+      <div class="section-title">
+        <h2>Материалы из файла</h2>
+        <button id="addMaterialRow" class="button button-secondary" type="button">Добавить материал</button>
+      </div>
+      <div class="table-wrap">
+        <table>
+          <thead><tr><th>Материал</th><th>Расход на пластину, г</th><th>Цена, ₽/кг</th><th></th></tr></thead>
+          <tbody id="materialRows"></tbody>
+        </table>
+      </div>
+    </section>
+
+    <section class="grid grid-3 results">
+      <div class="metric"><span>Себестоимость</span><strong id="productionCost">—</strong></div>
+      <div class="metric"><span>Коммерческая цена</span><strong id="finalPrice">—</strong></div>
+      <div class="metric"><span>Цена за деталь</span><strong id="finalUnitPrice">—</strong></div>
+    </section>
+
+    <section class="grid grid-2">
+      <div class="card">
+        <h2>Расшифровка расчёта</h2>
+        <div class="table-wrap"><table><tbody id="breakdownRows"></tbody></table></div>
+      </div>
+      <div class="card">
+        <h2>Данные из G-code</h2>
+        <div class="table-wrap"><table><tbody id="gcodeRows"></tbody></table></div>
+      </div>
+    </section>
+
+    <section class="card">
+      <h2>Настройки расчёта</h2>
+      <div class="form-grid compact">
+        <label>Электроэнергия, ₽/кВт·ч<input id="rule_electricity_rate" type="number" step="0.01" /></label>
+        <label>Ставка оператора, ₽/ч<input id="rule_operator_rate" type="number" step="0.01" /></label>
+        <label>Коммерческий коэффициент<input id="rule_commercial_coef" type="number" step="0.01" /></label>
+        <label>Минимум FDM, ₽ с НДС<input id="rule_min_order_fdm" type="number" step="1" /></label>
+        <label>НДС, доля<input id="rule_vat_rate" type="number" step="0.01" /></label>
+      </div>
+      <p class="muted">Эти значения можно менять прямо на странице. В публичной версии сайта они видны пользователям в коде страницы.</p>
+    </section>
+  </main>
+
+  <footer class="lp-footer">LP_PrintCostWebApp_v00.01_test · тестовая версия · Характеристики вместо маркетинга</footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/jszip@3.10.1/dist/jszip.min.js"></script>
+  <script src="./assets/app.js"></script>
+</body>
+</html>
