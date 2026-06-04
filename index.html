@@ -7,28 +7,199 @@
   <meta name="description" content="Инженерные решения для 3D-печати: реверс-инжиниринг, подбор материалов, технологические карты, контроль качества и калькулятор стоимости печати.">
   <link rel="stylesheet" href="/style.css">
 </head>
-<body class="exact-home">
-  <main class="exact-page" aria-label="ЛЕНИНГРАДСКИЙ ПОЛИМЕР — инженерные решения для 3D-печати">
-    <img class="exact-page__image" src="/assets/home-approved-render.png" alt="ЛЕНИНГРАДСКИЙ ПОЛИМЕР — инженерные решения для 3D-печати">
+<body class="home-layout">
+  <header class="home-header">
+    <div class="home-container home-header__inner">
+      <a class="home-logo" href="/">
+        <img src="/assets/render-logo.png" alt="ЛЕНИНГРАДСКИЙ ПОЛИМЕР">
+      </a>
+      <nav class="home-nav">
+        <a href="#solutions">Решения</a>
+        <a href="#approach">Подход</a>
+        <a href="/calculator/">Калькулятор</a>
+        <a href="/about/">Про нас</a>
+        <a href="#contacts">Контакты</a>
+      </nav>
+      <a class="home-btn home-btn--top" href="#contacts">Обсудить задачу</a>
+    </div>
+  </header>
 
-    <!-- Кликабельные зоны поверх утверждённого рендера -->
-    <a class="hotspot nav-solutions" href="#solutions-hit" aria-label="Решения"></a>
-    <a class="hotspot nav-approach" href="#approach-hit" aria-label="Подход"></a>
-    <a class="hotspot nav-calculator" href="/calculator/" aria-label="Калькулятор"></a>
-    <a class="hotspot nav-about" href="/about/" aria-label="Про нас"></a>
-    <a class="hotspot nav-contacts" href="#contacts-hit" aria-label="Контакты"></a>
+  <main>
+    <section class="home-hero">
+      <div class="home-container home-hero__grid">
+        <div class="home-hero__copy">
+          <div class="home-redline"></div>
+          <h1>Инженерные решения для 3D-печати</h1>
+          <p>
+            Помогаем реализовывать сложные проекты с помощью аддитивных технологий:
+            реверс-инжиниринг, подбор материалов, технологические карты и контроль качества.
+          </p>
+          <div class="home-hero__buttons">
+            <a class="home-btn home-btn--red" href="#contacts">Обсудить задачу</a>
+            <a class="home-btn home-btn--outline" href="/calculator/">Калькулятор стоимости печати</a>
+          </div>
+        </div>
+        <div class="home-hero__visual">
+          <img src="/assets/hero-spire-clean.png" alt="Инженерная графика">
+        </div>
+      </div>
 
-    <a class="hotspot cta-header" href="#contacts-hit" aria-label="Обсудить задачу"></a>
-    <a class="hotspot cta-hero" href="#contacts-hit" aria-label="Обсудить задачу"></a>
-    <a class="hotspot cta-hero-calc" href="/calculator/" aria-label="Калькулятор стоимости печати"></a>
-    <a class="hotspot cta-calc" href="/calculator/" aria-label="Запустить калькулятор"></a>
+      <div class="home-container home-features">
+        <div><img src="/assets/icon-feature-1.png" alt=""><span>Инженерный подход<br>и техническая экспертиза</span></div>
+        <div><img src="/assets/icon-feature-2.png" alt=""><span>Оборудование<br>промышленного уровня</span></div>
+        <div><img src="/assets/icon-feature-3.png" alt=""><span>Контроль качества<br>на каждом этапе</span></div>
+        <div><img src="/assets/icon-feature-4.png" alt=""><span>Документируем<br>и берём ответственность</span></div>
+      </div>
+    </section>
 
-    <a class="hotspot email-link" href="mailto:uranov@npolp.com" aria-label="Написать на email"></a>
-    <a class="hotspot phone-link" href="tel:+79218737110" aria-label="Позвонить"></a>
+    <section id="solutions" class="home-solutions">
+      <div class="home-container">
+        <div class="home-section-head">
+          <div>
+            <div class="home-redline home-redline--small"></div>
+            <h2>Наши решения</h2>
+          </div>
+          <p>Полный цикл инженерных услуг для подготовки и успешной реализации проектов 3D-печати.</p>
+        </div>
 
-    <span id="solutions-hit" class="anchor-point anchor-solutions"></span>
-    <span id="approach-hit" class="anchor-point anchor-approach"></span>
-    <span id="contacts-hit" class="anchor-point anchor-contacts"></span>
+        <div class="home-cards">
+          <article class="home-card">
+            <img src="/assets/icon-card-1.png" alt="">
+            <h3>Реверс-инжиниринг</h3>
+            <p>Цифровизация деталей и узлов, создание точных 3D-моделей и чертежей для аддитивного производства.</p>
+          </article>
+          <article class="home-card">
+            <img src="/assets/icon-card-2.png" alt="">
+            <h3>Подбор материалов</h3>
+            <p>Выбор оптимальных материалов под условия эксплуатации, нагрузки и требования к деталям.</p>
+          </article>
+          <article class="home-card">
+            <img src="/assets/icon-card-3.png" alt="">
+            <h3>Технологические карты</h3>
+            <p>Разработка режимов печати, параметров постобработки и инструкций для стабильного результата.</p>
+          </article>
+          <article class="home-card">
+            <img src="/assets/icon-card-4.png" alt="">
+            <h3>Контроль качества</h3>
+            <p>Верификация геометрии, механических свойств и соответствия требованиям на каждом этапе.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="approach" class="home-approach">
+      <div class="home-container home-approach__grid">
+        <div class="home-approach__image">
+          <img src="/assets/approach-mech.png" alt="Инженерная модель детали">
+        </div>
+        <div class="home-approach__copy">
+          <div class="home-redline home-redline--small"></div>
+          <h2>Наш подход</h2>
+          <p>Мы работаем как инженерный партнёр: глубоко погружаемся в задачу, выстраиваем процесс и обеспечиваем предсказуемый результат.</p>
+          <div class="home-steps">
+            <div>
+              <img src="/assets/icon-step-1.png" alt="">
+              <strong>Анализируем</strong>
+              <span>Изучаем задачу и условия эксплуатации.</span>
+            </div>
+            <div>
+              <img src="/assets/icon-step-2.png" alt="">
+              <strong>Проектируем</strong>
+              <span>Подбираем решения, материалы и режимы.</span>
+            </div>
+            <div>
+              <img src="/assets/icon-step-3.png" alt="">
+              <strong>Реализуем</strong>
+              <span>Печатаем, обрабатываем и проверяем.</span>
+            </div>
+            <div>
+              <img src="/assets/icon-step-4.png" alt="">
+              <strong>Подтверждаем</strong>
+              <span>Документируем результаты и несём ответственность.</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="home-calculator">
+      <div class="home-container home-calculator__grid">
+        <div class="home-calculator__copy">
+          <div class="home-redline home-redline--small"></div>
+          <h2>Калькулятор стоимости 3D-печати</h2>
+          <p>
+            Оцените стоимость и сроки изготовления вашей детали онлайн.
+            Загрузите G-code и получите предварительный расчёт за считанные минуты.
+          </p>
+          <a class="home-btn home-btn--red" href="/calculator/">Запустить калькулятор</a>
+        </div>
+        <div class="home-calculator__visual">
+          <img src="/assets/calc-gcode-ui.png" alt="Интерфейс калькулятора с загрузкой G-code">
+        </div>
+      </div>
+    </section>
+
+    <section id="contacts" class="home-contact">
+      <div class="home-container home-contact__grid">
+        <div class="home-contact__copy">
+          <div class="home-redline home-redline--small"></div>
+          <h2>Есть проект?</h2>
+          <p>Расскажите о задаче — подберём оптимальное решение и подготовим коммерческое предложение.</p>
+          <ul>
+            <li>+7 921 873 71 10</li>
+            <li>uranov@npolp.com</li>
+            <li>Санкт-Петербург</li>
+          </ul>
+        </div>
+
+        <form class="home-form">
+          <h3>Отправьте запрос</h3>
+          <div class="home-form__row">
+            <input type="text" placeholder="Ваше имя">
+            <input type="email" placeholder="E-mail">
+          </div>
+          <textarea placeholder="Опишите задачу"></textarea>
+          <button class="home-btn home-btn--red home-btn--full" type="button" onclick="showFormMessage()">Отправить запрос</button>
+          <p id="form-message" class="form-message"></p>
+        </form>
+
+        <div class="home-mascot">
+          <img src="/assets/mascot-clean.png" alt="Фирменный маскот">
+        </div>
+      </div>
+    </section>
   </main>
+
+  <footer class="home-footer">
+    <div class="home-container home-footer__grid">
+      <div>
+        <a class="home-logo home-logo--footer" href="/">
+          <img src="/assets/render-logo.png" alt="ЛЕНИНГРАДСКИЙ ПОЛИМЕР">
+        </a>
+        <p>Инженерные решения<br>для аддитивного производства.</p>
+      </div>
+
+      <nav class="home-footer__links">
+        <a href="#solutions">Решения</a>
+        <a href="#approach">Подход</a>
+        <a href="/calculator/">Калькулятор</a>
+        <a href="/about/">Про нас</a>
+        <a href="#contacts">Контакты</a>
+      </nav>
+
+      <div class="home-footer__contacts">
+        <span>+7 921 873 71 10</span>
+        <span>uranov@npolp.com</span>
+        <span>Санкт-Петербург</span>
+      </div>
+    </div>
+
+    <div class="home-container home-footer__bottom">
+      <span>© 2026 Ленинградский Полимер</span>
+      <span>Политика конфиденциальности</span>
+    </div>
+  </footer>
+
+  <script src="/script.js"></script>
 </body>
 </html>
