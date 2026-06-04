@@ -1079,3 +1079,29 @@ img { display: block; max-width: 100%; }
     flex-direction: column;
   }
 }
+
+
+/* v12 clean SVG icons: no cropped backgrounds, no artifacts */
+.home-features img,
+.home-card > img,
+.home-steps img {
+  display: block;
+  object-fit: contain;
+  background: transparent !important;
+  filter: none !important;
+}
+
+.home-features img {
+  width: 42px;
+  height: 42px;
+}
+
+.home-card > img {
+  width: 64px;
+  height: 64px;
+}
+
+.home-steps img {
+  width: 62px;
+  height: 62px;
+}
