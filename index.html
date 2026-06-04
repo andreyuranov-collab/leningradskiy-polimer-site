@@ -1,163 +1,201 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="ru">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>ЛЕНИНГРАДСКИЙ ПОЛИМЕР — инженерные материалы для 3D-печати</title>
-  <meta name="description" content="НПО ЛЕНИНГРАДСКИЙ ПОЛИМЕР — филаменты, компаунды и композиты для FDM/FFF 3D-печати. Контроль на уровне материала." />
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ЛЕНИНГРАДСКИЙ ПОЛИМЕР — инженерные решения для 3D-печати</title>
+  <meta name="description" content="ЛЕНИНГРАДСКИЙ ПОЛИМЕР разрабатывает инженерные решения для 3D-печати: реверс-инжиниринг, подбор материалов, технологические карты, контроль качества сырья и изделий." />
+  <meta property="og:title" content="ЛЕНИНГРАДСКИЙ ПОЛИМЕР" />
+  <meta property="og:description" content="Инженерные решения для 3D-печати: от анализа задачи до контролируемого результата." />
+  <meta property="og:type" content="website" />
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
   <header class="site-header">
     <div class="container header-inner">
-      <a class="logo" href="#top" aria-label="ЛЕНИНГРАДСКИЙ ПОЛИМЕР">
-        <img src="assets/brand-logo.png" alt="ЛЕНИНГРАДСКИЙ ПОЛИМЕР" />
+      <a class="logo" href="#top">
+        <span class="logo-mark">ЛП</span>
         <span>ЛЕНИНГРАДСКИЙ ПОЛИМЕР</span>
       </a>
-      <nav class="nav" aria-label="Основная навигация">
-        <a href="#principles">Принципы</a>
-        <a href="#materials">Материалы</a>
-        <a href="#naming">Маркировка</a>
-        <a href="#packaging">Упаковка</a>
-        <a href="/print-cost/" class="nav-calculator">Калькулятор печати</a>
+      <nav class="nav">
+        <a href="#solutions">Решения</a>
+        <a href="#approach">Подход</a>
+        <a href="#tasks">Задачи</a>
         <a href="#contacts">Контакты</a>
       </nav>
-      <button class="menu-button" type="button" onclick="toggleMenu()" aria-label="Открыть меню">☰</button>
     </div>
-    <nav class="mobile-nav" id="mobile-nav" aria-label="Мобильная навигация">
-      <a href="#principles" onclick="toggleMenu(false)">Принципы</a>
-      <a href="#materials" onclick="toggleMenu(false)">Материалы</a>
-      <a href="#naming" onclick="toggleMenu(false)">Маркировка</a>
-      <a href="#packaging" onclick="toggleMenu(false)">Упаковка</a>
-      <a href="/print-cost/" onclick="toggleMenu(false)">Калькулятор печати</a>
-      <a href="#contacts" onclick="toggleMenu(false)">Контакты</a>
-    </nav>
   </header>
 
   <main id="top">
     <section class="hero">
       <div class="container hero-grid">
-        <div>
-          <p class="eyebrow">Научно-производственное объединение</p>
-          <h1>Инженерные материалы для аддитивного производства</h1>
-          <p class="hero-text">Полимерные нити, компаунды и композиты для FDM/FFF 3D-печати с понятным составом, стабильной геометрией и повторяемыми характеристиками от партии к партии.</p>
+        <div class="hero-content">
+          <p class="eyebrow">Инженерные решения для 3D-печати</p>
+          <h1>От идеи детали до контролируемого технологического процесса</h1>
+          <p class="hero-text">
+            НПО «ЛЕНИНГРАДСКИЙ ПОЛИМЕР» помогает переводить изделия, узлы и технологические задачи
+            в формат аддитивного производства: анализирует геометрию, подбирает материалы, разрабатывает
+            технологические карты и проверяет качество результата.
+          </p>
           <div class="hero-actions">
-            <a class="button primary" href="#contacts">Обсудить материал</a>
-            <a class="button secondary" href="#materials">Смотреть линейку</a>
-            <a class="button calculator-button" href="/print-cost/">Запустить калькулятор печати</a>
+            <a class="button primary" href="#contacts">Обсудить задачу</a>
+            <a class="button secondary" href="#solutions">Что мы делаем</a>
           </div>
         </div>
-        <aside class="hero-panel" aria-label="Контроль на уровне материала">
-          <p class="panel-title">Контроль на уровне материала</p>
-          <ul>
-            <li>цвет по RAL или Natural;</li>
-            <li>диаметр и овальность под контролем;</li>
-            <li>профили печати и параметры партии;</li>
-            <li>без условных названий и скрытого состава.</li>
-          </ul>
+
+        <aside class="hero-note">
+          <span class="note-label">Фокус</span>
+          <p>
+            Реверс-инжиниринг, подбор материалов, технологические карты,
+            контроль качества сырья и готовых изделий.
+          </p>
         </aside>
       </div>
     </section>
 
-    <section class="section calculator-section" id="print-cost">
-      <div class="container calculator-card">
-        <div>
-          <p class="eyebrow">Расчёт стоимости печати</p>
-          <h2>Проверьте расход, время и ориентировочную стоимость изделия по файлу печати</h2>
-          <p>Веб-калькулятор анализирует G-code/3MF/STL прямо в браузере и показывает ключевые параметры: материал, вес, время печати, поддержки, brim/raft, черновую башню и технологическую прочистку.</p>
-        </div>
-        <div class="calculator-actions">
-          <a class="button primary" href="/print-cost/">Запустить калькулятор</a>
-          <p>Файл не отправляется на сервер — расчёт выполняется локально в браузере.</p>
-        </div>
-      </div>
-    </section>
-
-    <section class="section muted" id="principles">
-      <div class="container two-column">
-        <div>
-          <p class="eyebrow">Философия продукта</p>
-          <h2>Характеристики вместо маркетинга</h2>
-        </div>
-        <div class="cards four">
-          <article class="card"><h3>Прозрачность</h3><p>Материал имеет понятный состав, параметры и назначение без скрытых обозначений.</p></article>
-          <article class="card"><h3>Повторяемость</h3><p>Свойства сохраняются от партии к партии, чтобы процесс заказчика не “поехал”.</p></article>
-          <article class="card"><h3>Функциональность</h3><p>Материал подбирается под механические, температурные или химические нагрузки.</p></article>
-          <article class="card"><h3>Совместимость</h3><p>Продукция адаптируется под оборудование, слайсеры и профили печати.</p></article>
-        </div>
-      </div>
-    </section>
-
-    <section class="section" id="materials">
+    <section id="solutions" class="section">
       <div class="container">
-        <p class="eyebrow">Продуктовый портфель</p>
-        <h2>Материалы формируются по назначению, а не по красивым названиям</h2>
-        <div class="product-grid">
-          <div class="product"><strong>Базовые материалы</strong><span>PLA, PETG, ABS для прототипирования, функциональных деталей и серийной печати.</span></div>
-          <div class="product"><strong>Модифицированные материалы</strong><span>Бленды, ударопрочные и термостойкие составы под конкретные задачи.</span></div>
-          <div class="product"><strong>Композитные материалы</strong><span>CF, GF и другие наполненные материалы для повышения рабочих характеристик.</span></div>
-          <div class="product"><strong>Инженерные разработки</strong><span>PEEK, PP и перспективные рецептуры для специальных применений.</span></div>
+        <p class="eyebrow">Направления работы</p>
+        <h2>Инженерная поддержка задач, где важен результат, а не демонстрация технологии</h2>
+
+        <div class="solution-list">
+          <article class="solution-item">
+            <span>01</span>
+            <div>
+              <h3>Реверс-инжиниринг деталей</h3>
+              <p>
+                Анализ существующей детали, восстановление логики конструкции,
+                подготовка модели к изготовлению и адаптация геометрии под 3D-печать.
+              </p>
+            </div>
+          </article>
+
+          <article class="solution-item">
+            <span>02</span>
+            <div>
+              <h3>Подбор материалов</h3>
+              <p>
+                Выбор полимера и режима печати под нагрузки, температуру, среду эксплуатации,
+                требования к точности, жёсткости, ударной прочности или химической стойкости.
+              </p>
+            </div>
+          </article>
+
+          <article class="solution-item">
+            <span>03</span>
+            <div>
+              <h3>Технологические карты печати</h3>
+              <p>
+                Формирование понятного регламента: материал, параметры печати,
+                ориентация детали, поддержки, постобработка, контрольные точки и критерии приёмки.
+              </p>
+            </div>
+          </article>
+
+          <article class="solution-item">
+            <span>04</span>
+            <div>
+              <h3>Контроль качества</h3>
+              <p>
+                Проверка сырья, печатных образцов и готовых изделий по измеримым параметрам:
+                геометрия, масса, внешний вид, стабильность процесса и соответствие назначению.
+              </p>
+            </div>
+          </article>
         </div>
       </div>
     </section>
 
-    <section class="section dark" id="naming">
-      <div class="container two-column">
+    <section id="approach" class="section dark">
+      <div class="container approach-grid">
         <div>
-          <p class="eyebrow">Система наименования</p>
-          <h2>Стандартизированная маркировка без путаницы</h2>
+          <p class="eyebrow">Подход</p>
+          <h2>3D-печать рассматривается как технологический процесс, а не как разовая услуга</h2>
         </div>
-        <div class="naming-box">
-          <p>Название материала строится на технических характеристиках: базовый полимер, модификация или наполнение, цвет по RAL и диаметр.</p>
-          <code>[Базовый полимер] + [модификация / наполнение] + [цвет RAL] + [диаметр]</code>
-          <ul>
-            <li>PLA | Красный RAL 3020 | 1.75 мм</li>
-            <li>PETG CF10 | Черный RAL 9005 | 1.75 мм</li>
-            <li>ABS GF15 | Natural | 2.85 мм</li>
-          </ul>
-        </div>
-      </div>
-    </section>
-
-    <section class="section muted" id="packaging">
-      <div class="container two-column">
-        <div>
-          <p class="eyebrow">Упаковка</p>
-          <h2>Упаковка как часть технологического процесса</h2>
-        </div>
-        <div class="check-list">
-          <p>Плотный вакуумный пакет, силикагель индикаторного типа, карточная катушка, информация о партии, весе пустой катушки, параметрах печати и остатках филамента.</p>
-          <p>На этикетке — все ключевые данные: материал, цвет RAL, диаметр, партия, рекомендуемые режимы и ссылка на страницу продукта.</p>
+        <div class="approach-text">
+          <p>
+            Мы не начинаем с вопроса «на каком принтере напечатать». Сначала определяется назначение детали,
+            условия работы, ограничения по материалу, требования к геометрии и допустимые риски.
+          </p>
+          <p>
+            После этого подбирается технологический маршрут: модель, материал, параметры печати,
+            постобработка и способ проверки результата. Такой подход снижает количество экспериментов
+            и делает результат повторяемым.
+          </p>
         </div>
       </div>
     </section>
 
-    <section class="section" id="b2b">
+    <section id="tasks" class="section muted">
       <div class="container">
-        <p class="eyebrow">Для B2B-заказчиков</p>
-        <h2>Материал, который можно закладывать в процесс</h2>
-        <div class="cards three">
-          <article class="card"><h3>Стабильный результат</h3><p>Одинаковое поведение материала при повторных поставках и серийной печати.</p></article>
-          <article class="card"><h3>Снижение брака</h3><p>Контроль качества на каждом этапе производства и прозрачные параметры партии.</p></article>
-          <article class="card"><h3>Адаптация под задачу</h3><p>При необходимости материал дорабатывается под требования изделия и оборудования.</p></article>
+        <p class="eyebrow">Типовые задачи</p>
+        <h2>Когда к нам обращаются</h2>
+
+        <div class="task-grid">
+          <div class="task-card">
+            <h3>Нужно заменить недоступную деталь</h3>
+            <p>Восстановить геометрию, подобрать материал и подготовить изделие к изготовлению.</p>
+          </div>
+          <div class="task-card">
+            <h3>Печать нестабильна</h3>
+            <p>Разобраться, проблема в материале, модели, настройках, оборудовании или подготовке сырья.</p>
+          </div>
+          <div class="task-card">
+            <h3>Нужен регламент</h3>
+            <p>Описать процесс так, чтобы результат можно было повторять не только в руках одного специалиста.</p>
+          </div>
+          <div class="task-card">
+            <h3>Требуется проверка качества</h3>
+            <p>Сформировать критерии приёмки для сырья, образцов или готовых 3D-печатных изделий.</p>
+          </div>
         </div>
       </div>
     </section>
 
-    <section class="section contact-section" id="contacts">
+    <section class="section compact">
+      <div class="container compact-box">
+        <p class="eyebrow">Принцип работы</p>
+        <h2>Точность, которую можно измерить</h2>
+        <p>
+          Мы используем технический язык, проверяемые параметры и понятные критерии результата.
+          Никаких условных обещаний: только задача, материал, режим, контроль и вывод.
+        </p>
+      </div>
+    </section>
+
+    <section id="contacts" class="section contact-section">
       <div class="container contact-grid">
         <div>
           <p class="eyebrow">Контакты</p>
-          <h2>Обсудить материал, партию или технологическую задачу</h2>
-          <p>Опишите задачу: материал, оборудование, требования к изделию, условия эксплуатации и ожидаемый объём. Мы подберём решение без лишних допущений.</p>
+          <h2>Опишите задачу</h2>
+          <p>
+            Укажите, что требуется: восстановить деталь, подобрать материал, разработать техкарту,
+            проверить качество или подготовить изделие к печати.
+          </p>
+          <p class="contact-note">
+            Сайт находится в тестовом режиме. Контактные данные будут добавлены перед публичным запуском.
+          </p>
         </div>
-        <form class="contact-form" onsubmit="event.preventDefault(); showFormMessage();">
-          <label>Имя<input type="text" name="name" autocomplete="name" /></label>
-          <label>Компания<input type="text" name="company" autocomplete="organization" /></label>
-          <label>Телефон или email<input type="text" name="contact" autocomplete="email" /></label>
-          <label>Задача<textarea name="message"></textarea></label>
-          <button class="button primary" type="submit">Отправить заявку</button>
-          <p class="form-message" id="form-message" aria-live="polite"></p>
+
+        <form class="contact-form">
+          <label>
+            Имя
+            <input type="text" placeholder="Ваше имя" />
+          </label>
+          <label>
+            Компания
+            <input type="text" placeholder="Название компании" />
+          </label>
+          <label>
+            Телефон или email
+            <input type="text" placeholder="+7 / email" />
+          </label>
+          <label>
+            Задача
+            <textarea placeholder="Кратко опишите изделие, материал, проблему или требование"></textarea>
+          </label>
+          <button type="button" class="button primary" onclick="showFormMessage()">Отправить</button>
+          <p id="form-message" class="form-message"></p>
         </form>
       </div>
     </section>
@@ -166,7 +204,7 @@
   <footer class="site-footer">
     <div class="container footer-inner">
       <span>© 2026 НПО «ЛЕНИНГРАДСКИЙ ПОЛИМЕР»</span>
-      <span>От гранулы к результату</span>
+      <span>Инженерные решения для 3D-печати</span>
     </div>
   </footer>
 
