@@ -503,3 +503,68 @@ img { display: block; max-width: 100%; }
   .footer__bottom { flex-direction:column; }
   .calc-result { position: static; }
 }
+
+
+/* v10 exact render homepage */
+.exact-home {
+  margin: 0;
+  background: #05070a;
+}
+
+.exact-page {
+  position: relative;
+  width: min(100%, 1368px);
+  margin: 0 auto;
+  background: #05070a;
+}
+
+.exact-page__image {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.hotspot {
+  position: absolute;
+  z-index: 10;
+  display: block;
+  background: rgba(255, 255, 255, 0);
+  border-radius: 8px;
+}
+
+.hotspot:focus-visible {
+  outline: 2px solid #ee2b21;
+  outline-offset: 2px;
+}
+
+/* Coordinates are percentages of the approved render image */
+.nav-solutions { left: 29.0%; top: 2.1%; width: 7.5%; height: 2.0%; }
+.nav-approach { left: 37.1%; top: 2.1%; width: 6.5%; height: 2.0%; }
+.nav-calculator { left: 44.7%; top: 2.1%; width: 9.5%; height: 2.0%; }
+.nav-about { left: 55.1%; top: 2.1%; width: 6.4%; height: 2.0%; }
+.nav-contacts { left: 62.7%; top: 2.1%; width: 8.0%; height: 2.0%; }
+
+.cta-header { left: 81.0%; top: 1.6%; width: 14.0%; height: 2.7%; }
+.cta-hero { left: 4.3%; top: 24.6%; width: 18.2%; height: 3.0%; }
+.cta-hero-calc { left: 24.0%; top: 24.6%; width: 21.5%; height: 3.0%; }
+.cta-calc { left: 4.4%; top: 74.3%; width: 23.4%; height: 3.4%; }
+
+.phone-link { left: 6.5%; top: 87.6%; width: 20.0%; height: 1.7%; }
+.email-link { left: 6.5%; top: 90.0%; width: 20.0%; height: 1.7%; }
+
+.anchor-point {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  left: 0;
+}
+.anchor-solutions { top: 32.5%; }
+.anchor-approach { top: 52.0%; }
+.anchor-contacts { top: 81.0%; }
+
+@media (max-width: 760px) {
+  .exact-page {
+    width: 100%;
+    overflow-x: hidden;
+  }
+}
