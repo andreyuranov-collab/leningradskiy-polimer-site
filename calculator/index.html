@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Калькулятор стоимости 3D-печати — ЛЕНИНГРАДСКИЙ ПОЛИМЕР</title>
+  <meta name="description" content="Рабочий калькулятор предварительной стоимости 3D-печати: материал, масса, время печати, подготовка, электроэнергия, постобработка и контроль." />
+  <meta property="og:title" content="Калькулятор стоимости 3D-печати" />
+  <meta property="og:description" content="Предварительная оценка стоимости печати." />
+  <meta property="og:type" content="website" />
+  <link rel="stylesheet" href="/style.css" />
+</head>
+<body>
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="logo" href="/">
+        <img src="/assets/logo.png" alt="ЛЕНИНГРАДСКИЙ ПОЛИМЕР" />
+        <span>ЛЕНИНГРАДСКИЙ ПОЛИМЕР</span>
+      </a>
+      <nav class="nav">
+        <a href="/#solutions">Решения</a>
+        <a href="/#approach">Подход</a>
+        <a href="/calculator/">Калькулятор</a>
+        <a href="/about/">Про нас</a>
+        <a href="/#contacts">Контакты</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="page-hero dark">
+      <div class="container">
+        <p class="eyebrow">Рабочий инструмент</p>
+        <h1>Калькулятор стоимости 3D-печати</h1>
+        <p class="page-lead">
+          Предварительный расчёт по базовым параметрам: материал, масса детали, время печати,
+          подготовка, электроэнергия, постобработка, контроль качества и НДС.
+        </p>
+      </div>
+    </section>
+
+    <section class="section calculator-workspace">
+      <div class="container calc-layout">
+        <form class="calc-form" id="printCalc">
+          <div class="calc-block">
+            <h2>Параметры печати</h2>
+
+            <label>
+              Материал
+              <select id="material">
+                <option value="PLA" data-price="1200">PLA — 1200 руб/кг</option>
+                <option value="PETG" data-price="1500">PETG — 1500 руб/кг</option>
+                <option value="ABS" data-price="1600">ABS — 1600 руб/кг</option>
+                <option value="TPU" data-price="2200">TPU — 2200 руб/кг</option>
+                <option value="PA" data-price="3200">PA / Nylon — 3200 руб/кг</option>
+                <option value="PC" data-price="3800">PC — 3800 руб/кг</option>
+                <option value="Composite" data-price="4500">Композитный материал — 4500 руб/кг</option>
+                <option value="Custom" data-price="0">Свой материал</option>
+              </select>
+            </label>
+
+            <div class="calc-row">
+              <label>
+                Цена материала, руб/кг
+                <input id="materialPrice" type="number" min="0" step="10" value="1200" />
+              </label>
+              <label>
+                Масса детали, г
+                <input id="partWeight" type="number" min="0" step="1" value="100" />
+              </label>
+            </div>
+
+            <div class="calc-row">
+              <label>
+                Масса поддержек, г
+                <input id="supportWeight" type="number" min="0" step="1" value="15" />
+              </label>
+              <label>
+                Прочистка / отходы, г
+                <input id="wasteWeight" type="number" min="0" step="1" value="5" />
+              </label>
+            </div>
+
+            <div class="calc-row">
+              <label>
+                Время печати, ч
+                <input id="printHours" type="number" min="0" step="0.1" value="6" />
+              </label>
+              <label>
+                Ставка принтера, руб/ч
+                <input id="machineRate" type="number" min="0" step="10" value="180" />
+              </label>
+            </div>
+          </div>
+
+          <div class="calc-block">
+            <h2>Работы и коэффициенты</h2>
+
+            <div class="calc-row">
+              <label>
+                Подготовка модели, мин
+                <input id="prepMinutes" type="number" min="0" step="5" value="20" />
+              </label>
+              <label>
+                Ставка специалиста, руб/ч
+                <input id="laborRate" type="number" min="0" step="50" value="1200" />
+              </label>
+            </div>
+
+            <div class="calc-row">
+              <label>
+                Постобработка, мин
+                <input id="postMinutes" type="number" min="0" step="5" value="15" />
+              </label>
+              <label>
+                Контроль качества, мин
+                <input id="qcMinutes" type="number" min="0" step="5" value="10" />
+              </label>
+            </div>
+
+            <div class="calc-row">
+              <label>
+                Мощность, кВт
+                <input id="powerKw" type="number" min="0" step="0.1" value="0.35" />
+              </label>
+              <label>
+                Электроэнергия, руб/кВт⋅ч
+                <input id="energyRate" type="number" min="0" step="0.5" value="8" />
+              </label>
+            </div>
+
+            <div class="calc-row">
+              <label>
+                Накладные расходы, %
+                <input id="overheadPercent" type="number" min="0" step="1" value="20" />
+              </label>
+              <label>
+                Прибыль, %
+                <input id="profitPercent" type="number" min="0" step="1" value="30" />
+              </label>
+            </div>
+
+            <div class="calc-row">
+              <label>
+                НДС, %
+                <input id="vatPercent" type="number" min="0" step="1" value="22" />
+              </label>
+              <label>
+                Минимальная стоимость заказа, руб
+                <input id="minOrder" type="number" min="0" step="50" value="1000" />
+              </label>
+            </div>
+          </div>
+
+          <div class="calc-actions">
+            <button class="button primary" type="button" id="calculateBtn">Рассчитать</button>
+            <button class="button secondary-dark" type="reset" id="resetBtn">Сбросить</button>
+          </div>
+        </form>
+
+        <aside class="calc-result" id="calcResult">
+          <p class="eyebrow">Результат</p>
+          <h2 id="totalPrice">—</h2>
+          <p class="result-note" id="resultNote">Заполните параметры и нажмите «Рассчитать».</p>
+
+          <div class="result-table" id="breakdown">
+            <div><span>Материал</span><strong>—</strong></div>
+            <div><span>Работа принтера</span><strong>—</strong></div>
+            <div><span>Подготовка</span><strong>—</strong></div>
+            <div><span>Постобработка</span><strong>—</strong></div>
+            <div><span>Контроль качества</span><strong>—</strong></div>
+            <div><span>Электроэнергия</span><strong>—</strong></div>
+            <div><span>Накладные расходы</span><strong>—</strong></div>
+            <div><span>Прибыль</span><strong>—</strong></div>
+            <div><span>НДС</span><strong>—</strong></div>
+          </div>
+
+          <div class="calc-summary">
+            <p><strong>Масса к расчёту:</strong> <span id="totalWeight">—</span></p>
+            <p><strong>Себестоимость до наценки:</strong> <span id="baseCost">—</span></p>
+            <p><strong>Цена без НДС:</strong> <span id="priceNoVat">—</span></p>
+            <p><strong>Цена с НДС:</strong> <span id="priceWithVat">—</span></p>
+          </div>
+        </aside>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <span>© 2026 НПО «ЛЕНИНГРАДСКИЙ ПОЛИМЕР»</span>
+      <span>Инженерные решения для 3D-печати</span>
+    </div>
+  </footer>
+
+  <script src="/script.js"></script>
+</body>
+</html>
