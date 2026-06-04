@@ -1137,23 +1137,16 @@ img { display: block; max-width: 100%; }
 }
 
 
-/* v14 unified sharp SVG logo across all pages */
+/* v15: logo unblur only, no redesign */
 .home-logo img,
 .home-logo--footer img,
 .brand img,
 .footer__brand img {
-  width: 184px !important;
-  max-width: 184px !important;
-  height: auto !important;
-  object-fit: contain !important;
+  width: 184px;
+  height: auto;
+  object-fit: contain;
+  image-rendering: auto;
   filter: none !important;
-}
-
-.home-logo,
-.brand,
-.footer__brand {
-  display: inline-flex;
-  align-items: center;
 }
 
 .brand span,
@@ -1161,20 +1154,11 @@ img { display: block; max-width: 100%; }
   display: none !important;
 }
 
-.topbar__inner .brand {
-  min-width: 184px;
-}
-
 @media (max-width: 1100px) {
   .home-logo img,
   .home-logo--footer img,
   .brand img,
   .footer__brand img {
-    width: 164px !important;
-    max-width: 164px !important;
-  }
-
-  .topbar__inner .brand {
-    min-width: 164px;
+    width: 164px;
   }
 }
