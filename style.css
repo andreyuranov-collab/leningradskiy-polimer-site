@@ -1135,3 +1135,46 @@ img { display: block; max-width: 100%; }
   width: 100%;
   height: auto;
 }
+
+
+/* v14 unified sharp SVG logo across all pages */
+.home-logo img,
+.home-logo--footer img,
+.brand img,
+.footer__brand img {
+  width: 184px !important;
+  max-width: 184px !important;
+  height: auto !important;
+  object-fit: contain !important;
+  filter: none !important;
+}
+
+.home-logo,
+.brand,
+.footer__brand {
+  display: inline-flex;
+  align-items: center;
+}
+
+.brand span,
+.footer__brand span {
+  display: none !important;
+}
+
+.topbar__inner .brand {
+  min-width: 184px;
+}
+
+@media (max-width: 1100px) {
+  .home-logo img,
+  .home-logo--footer img,
+  .brand img,
+  .footer__brand img {
+    width: 164px !important;
+    max-width: 164px !important;
+  }
+
+  .topbar__inner .brand {
+    min-width: 164px;
+  }
+}

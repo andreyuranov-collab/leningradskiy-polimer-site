@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="360" height="118" viewBox="0 0 360 118" fill="none">
+  <g fill="#ee2b21">
+    <!-- stylized spire -->
+    <path d="M43 7L48 25H38L43 7Z"/>
+    <path d="M39 25H47V34H39V25Z"/>
+    <path d="M34 34H52L49 43H37L34 34Z"/>
+    <path d="M37 43H49V53H37V43Z"/>
+    <path d="M30 53H56L52 64H34L30 53Z"/>
+    <path d="M35 64H51V78H35V64Z"/>
+    <path d="M22 78H64L59 90H27L22 78Z"/>
+    <!-- ship / base -->
+    <path d="M12 93H83L74 104H25L12 93Z"/>
+    <path d="M18 85L34 93H15L18 85Z"/>
+    <path d="M70 85L54 93H75L70 85Z"/>
+    <rect x="7" y="105" width="82" height="5" rx="1"/>
+    <rect x="0" y="111" width="96" height="4" rx="1"/>
+    <!-- small architectural details -->
+    <rect x="40" y="68" width="6" height="10" rx="1"/>
+    <rect x="38" y="47" width="10" height="2"/>
+    <rect x="36" y="57" width="14" height="2"/>
+    <rect x="31" y="82" width="24" height="2"/>
+  </g>
+  <g fill="#ee2b21" font-family="Arial, Helvetica, sans-serif" font-weight="900">
+    <text x="112" y="48" font-size="34" letter-spacing="-0.7">ЛЕНИНГРАДСКИЙ</text>
+    <text x="112" y="96" font-size="52" letter-spacing="-1.4">ПОЛИМЕР</text>
+  </g>
+</svg>
