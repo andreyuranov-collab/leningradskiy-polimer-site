@@ -1,80 +1,87 @@
 <!DOCTYPE html>
 <html lang="ru">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>ЛЕНИНГРАДСКИЙ ПОЛИМЕР — инженерные решения для 3D-печати</title>
-  <meta name="description" content="Инженерные решения для 3D-печати: реверс-инжиниринг, подбор материалов, технологические карты, контроль качества и калькулятор стоимости печати." />
-  <link rel="stylesheet" href="/style.css" />
+  <meta name="description" content="Инженерные решения для 3D-печати: реверс-инжиниринг, подбор материалов, технологические карты, контроль качества и калькулятор стоимости печати.">
+  <link rel="stylesheet" href="/style.css">
 </head>
-<body>
-  <header class="render-header">
-    <div class="container render-header-inner">
-      <a class="render-logo" href="/">
-        <img src="/assets/logo.png" alt="ЛЕНИНГРАДСКИЙ ПОЛИМЕР" />
-        <span>ЛЕНИНГРАДСКИЙ ПОЛИМЕР</span>
-      </a>
-      <nav class="render-nav">
-        <a href="#solutions">Решения</a>
-        <a href="#approach">Подход</a>
-        <a href="/calculator/">Калькулятор</a>
-        <a href="/about/">Про нас</a>
-        <a href="#contacts">Контакты</a>
-      </nav>
-      <a class="render-header-btn" href="#contacts">Обсудить задачу</a>
-    </div>
-  </header>
+<body class="page-home">
+  <header class="topbar">
+  <div class="container topbar__inner">
+    <a class="brand" href="/">
+      <img src="/assets/logo.png" alt="ЛЕНИНГРАДСКИЙ ПОЛИМЕР">
+      <span>ЛЕНИНГРАДСКИЙ<br>ПОЛИМЕР</span>
+    </a>
+    <nav class="mainnav" aria-label="Основная навигация">
+      <a href="/#solutions">Решения</a>
+      <a href="/#approach">Подход</a>
+      <a href="/calculator/">Калькулятор</a>
+      <a href="/about/">Про нас</a>
+      <a href="/#contacts">Контакты</a>
+    </nav>
+    <a class="btn btn--small btn--red" href="/#contacts">Обсудить задачу</a>
+  </div>
+</header>
 
   <main>
-    <section class="render-hero">
-      <div class="container render-hero-grid">
-        <div class="render-hero-copy">
-          <div class="render-accent-line"></div>
+    <section class="hero">
+      <div class="container hero__grid">
+        <div class="hero__copy">
+          <div class="accent-line"></div>
           <h1>Инженерные решения для 3D-печати</h1>
           <p>
             Помогаем реализовывать сложные проекты с помощью аддитивных технологий:
             реверс-инжиниринг, подбор материалов, технологические карты и контроль качества.
           </p>
-          <div class="render-hero-actions">
-            <a class="render-red-btn" href="#contacts">Обсудить задачу</a>
-            <a class="render-outline-btn" href="/calculator/">Калькулятор стоимости печати</a>
-          </div>
-          <div class="render-features-row">
-            <div>Инженерный подход и техническая экспертиза</div>
-            <div>Оборудование промышленного уровня</div>
-            <div>Контроль качества на каждом этапе</div>
-            <div>Документируем и берём ответственность</div>
+          <div class="hero__actions">
+            <a class="btn btn--red" href="#contacts">Обсудить задачу</a>
+            <a class="btn btn--outline" href="/calculator/">Калькулятор стоимости печати</a>
           </div>
         </div>
-        <div class="render-hero-art">
-          <img src="/assets/hero-spire.png" alt="Инженерная графика ЛЕНИНГРАДСКИЙ ПОЛИМЕР" />
+
+        <div class="hero__art">
+          <img src="/assets/hero-spire.png" alt="Инженерная графика ЛЕНИНГРАДСКИЙ ПОЛИМЕР">
         </div>
+      </div>
+
+      <div class="container feature-row">
+        <div><span>Инженерный подход<br>и техническая экспертиза</span></div>
+        <div><span>Оборудование<br>промышленного уровня</span></div>
+        <div><span>Контроль качества<br>на каждом этапе</span></div>
+        <div><span>Документируем<br>и берём ответственность</span></div>
       </div>
     </section>
 
-    <section id="solutions" class="render-solutions">
+    <section id="solutions" class="solutions">
       <div class="container">
-        <div class="render-section-head">
+        <div class="section-head">
           <div>
-            <div class="render-accent-line red"></div>
+            <div class="accent-line accent-line--red"></div>
             <h2>Наши решения</h2>
           </div>
           <p>Полный цикл инженерных услуг для подготовки и успешной реализации проектов 3D-печати.</p>
         </div>
-        <div class="render-cards-grid">
-          <article class="render-service-card">
+
+        <div class="solution-cards">
+          <article class="solution-card">
+            <div class="card-icon">□</div>
             <h3>Реверс-инжиниринг</h3>
             <p>Цифровизация деталей и узлов, создание точных 3D-моделей и чертежей для аддитивного производства.</p>
           </article>
-          <article class="render-service-card">
+          <article class="solution-card">
+            <div class="card-icon">⬡</div>
             <h3>Подбор материалов</h3>
             <p>Выбор оптимальных материалов под условия эксплуатации, нагрузки и требования к деталям.</p>
           </article>
-          <article class="render-service-card">
+          <article class="solution-card">
+            <div class="card-icon">▤</div>
             <h3>Технологические карты</h3>
             <p>Разработка режимов печати, параметров постобработки и инструкций для стабильного результата.</p>
           </article>
-          <article class="render-service-card">
+          <article class="solution-card">
+            <div class="card-icon">◎</div>
             <h3>Контроль качества</h3>
             <p>Верификация геометрии, механических свойств и соответствия требованиям на каждом этапе.</p>
           </article>
@@ -82,14 +89,19 @@
       </div>
     </section>
 
-    <section id="approach" class="render-approach">
-      <div class="container render-approach-grid">
-        <div class="render-approach-image"><img src="/assets/approach-part.png" alt="Инженерная модель детали" /></div>
-        <div class="render-approach-copy">
-          <div class="render-accent-line"></div>
+    <section id="approach" class="approach">
+      <div class="container approach__grid">
+        <div class="approach__image">
+          <img src="/assets/approach-part.png" alt="Инженерная модель детали">
+        </div>
+        <div class="approach__copy">
+          <div class="accent-line"></div>
           <h2>Наш подход</h2>
-          <p>Мы работаем как инженерный партнёр: глубоко погружаемся в задачу, выстраиваем процесс и обеспечиваем предсказуемый результат.</p>
-          <div class="render-steps-grid">
+          <p>
+            Мы работаем как инженерный партнёр: глубоко погружаемся в задачу,
+            выстраиваем процесс и обеспечиваем предсказуемый результат.
+          </p>
+          <div class="steps">
             <div><strong>Анализируем</strong><span>Изучаем задачу и условия эксплуатации.</span></div>
             <div><strong>Проектируем</strong><span>Подбираем решения, материалы и режимы.</span></div>
             <div><strong>Реализуем</strong><span>Печатаем, обрабатываем и проверяем.</span></div>
@@ -99,68 +111,81 @@
       </div>
     </section>
 
-    <section class="render-calc-band">
-      <div class="container render-calc-band-grid">
-        <div class="render-calc-copy">
-          <div class="render-accent-line"></div>
+    <section class="calc-promo">
+      <div class="container calc-promo__grid">
+        <div class="calc-promo__copy">
+          <div class="accent-line"></div>
           <h2>Калькулятор стоимости 3D-печати</h2>
-          <p>Оцените стоимость и сроки изготовления вашей детали онлайн. Укажите параметры модели и получите предварительный расчёт за считанные минуты.</p>
-          <a class="render-red-btn" href="/calculator/">Запустить калькулятор</a>
+          <p>
+            Оцените стоимость и сроки изготовления вашей детали онлайн.
+            Загрузите G-code и получите предварительный расчёт по материалу, времени печати и операциям.
+          </p>
+          <a class="btn btn--red" href="/calculator/">Запустить калькулятор</a>
         </div>
-        <div class="render-calc-image"><img src="/assets/calc-laptop.png" alt="Калькулятор стоимости 3D-печати" /></div>
+        <div class="calc-promo__visual">
+          <img src="/assets/calc-ui.png" alt="Интерфейс калькулятора стоимости 3D-печати с загрузкой G-code">
+        </div>
       </div>
     </section>
 
-    <section id="contacts" class="render-contact-section">
-      <div class="container render-contact-grid">
-        <div class="render-contact-copy">
-          <div class="render-accent-line red"></div>
+    <section id="contacts" class="contact">
+      <div class="container contact__grid">
+        <div class="contact__copy">
+          <div class="accent-line accent-line--red"></div>
           <h2>Есть проект?</h2>
           <p>Расскажите о задаче — подберём оптимальное решение и подготовим коммерческое предложение.</p>
-          <ul>
-            <li><strong>+7 921 873 71 10</strong></li>
+          <ul class="contact-list">
+            <li>+7 921 873 71 10</li>
             <li>uranov@npolp.com</li>
             <li>Санкт-Петербург</li>
           </ul>
         </div>
-        <form class="render-contact-form">
+
+        <form class="contact-form">
           <h3>Отправьте запрос</h3>
-          <div class="render-form-two">
-            <label><input type="text" placeholder="Ваше имя" /></label>
-            <label><input type="text" placeholder="E-mail" /></label>
+          <div class="form-row">
+            <input type="text" placeholder="Ваше имя">
+            <input type="email" placeholder="E-mail">
           </div>
-          <label><textarea placeholder="Опишите задачу"></textarea></label>
-          <button type="button" class="render-red-btn full" onclick="showFormMessage()">Отправить запрос</button>
+          <textarea placeholder="Опишите задачу"></textarea>
+          <button class="btn btn--red btn--full" type="button" onclick="showFormMessage()">Отправить запрос</button>
           <p id="form-message" class="form-message"></p>
         </form>
-        <div class="render-contact-mascot"><img src="/assets/contact-mascot.png" alt="Фирменный маскот" /></div>
+
+        <div class="contact__mascot">
+          <img src="/assets/contact-mascot.png" alt="Фирменный маскот">
+        </div>
       </div>
     </section>
   </main>
 
-  <footer class="render-footer">
-    <div class="container render-footer-grid">
-      <div>
-        <a class="render-logo" href="/">
-          <img src="/assets/logo.png" alt="ЛЕНИНГРАДСКИЙ ПОЛИМЕР" />
-          <span>ЛЕНИНГРАДСКИЙ ПОЛИМЕР</span>
-        </a>
-        <p>Инженерные решения для аддитивного производства.</p>
-      </div>
-      <div class="render-footer-links">
-        <a href="#solutions">Решения</a>
-        <a href="#approach">Подход</a>
-        <a href="/calculator/">Калькулятор</a>
-        <a href="/about/">Про нас</a>
-        <a href="#contacts">Контакты</a>
-      </div>
-      <div class="render-footer-contacts">
-        <div>+7 921 873 71 10</div>
-        <div>uranov@npolp.com</div>
-        <div>Санкт-Петербург</div>
-      </div>
+  <footer class="footer">
+  <div class="container footer__grid">
+    <div>
+      <a class="brand footer__brand" href="/">
+        <img src="/assets/logo.png" alt="ЛЕНИНГРАДСКИЙ ПОЛИМЕР">
+        <span>ЛЕНИНГРАДСКИЙ<br>ПОЛИМЕР</span>
+      </a>
+      <p>Инженерные решения<br>для аддитивного производства.</p>
     </div>
-  </footer>
+    <nav class="footer__nav">
+      <a href="/#solutions">Решения</a>
+      <a href="/#approach">Подход</a>
+      <a href="/calculator/">Калькулятор</a>
+      <a href="/about/">Про нас</a>
+      <a href="/#contacts">Контакты</a>
+    </nav>
+    <div class="footer__contacts">
+      <span>+7 921 873 71 10</span>
+      <span>uranov@npolp.com</span>
+      <span>Санкт-Петербург</span>
+    </div>
+  </div>
+  <div class="container footer__bottom">
+    <span>© 2026 Ленинградский Полимер</span>
+    <span>Политика конфиденциальности</span>
+  </div>
+</footer>
   <script src="/script.js"></script>
 </body>
 </html>
