@@ -1404,3 +1404,148 @@ img { display: block; max-width: 100%; }
 .profile-box h2 {
   letter-spacing: -.02em;
 }
+
+
+/* v19: remove highlighted homepage CTA blocks */
+.home-header__inner {
+  grid-template-columns: 230px 1fr;
+}
+.home-nav {
+  justify-content: flex-start;
+}
+
+@media (max-width: 1100px) {
+  .home-header__inner {
+    grid-template-columns: 190px 1fr;
+  }
+}
+
+
+/* v20: remove white/gray bleed above approach section on homepage */
+.home-approach {
+  position: relative;
+  z-index: 2;
+  margin-top: -18px;
+  padding-top: 18px;
+  box-shadow: inset 0 22px 0 #05070a;
+}
+
+/* keep the approach section edge clean and black */
+.home-approach::before {
+  box-shadow: inset 0 22px 0 rgba(5,7,10,1);
+}
+
+
+/* v21: approved logo/hero and requested final homepage fixes */
+
+/* Approved transparent logo: no hard black box around header/footer logo */
+.home-logo img,
+.home-logo--footer img,
+.brand img,
+.footer__brand img {
+  width: 260px !important;
+  max-width: 260px !important;
+  height: auto !important;
+  object-fit: contain !important;
+  filter: none !important;
+  background: transparent !important;
+}
+
+.home-header__inner {
+  grid-template-columns: 300px 1fr !important;
+}
+
+.home-nav {
+  justify-content: flex-end !important;
+}
+
+/* Approved hero image blends with dark page background */
+.home-hero__visual {
+  position: relative;
+  isolation: isolate;
+}
+
+.home-hero__visual img {
+  position: relative;
+  z-index: 1;
+  content: url("/assets/hero-spire-clean-blend.png");
+  width: 100%;
+  max-height: 560px;
+  object-fit: contain;
+  filter: contrast(1.04);
+  background: transparent !important;
+  -webkit-mask-image: none !important;
+  mask-image: none !important;
+}
+
+/* Red diagonal line must be over the hero image */
+.home-hero__visual::after {
+  z-index: 5 !important;
+  pointer-events: none;
+}
+
+/* Remove white strip embedded at the top of the mechanical part visual */
+.home-approach__image {
+  background: #05070a !important;
+}
+
+.home-approach__image img {
+  object-fit: cover;
+  object-position: center center;
+  background: transparent !important;
+}
+
+/* Contact block: mascot must fit fully, not be over-zoomed */
+.home-contact__grid {
+  grid-template-columns: .82fr 1.05fr .52fr !important;
+  gap: 30px !important;
+  align-items: stretch !important;
+}
+
+.home-mascot {
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  height: 100% !important;
+}
+
+.home-mascot img {
+  width: 100% !important;
+  max-width: 260px !important;
+  height: auto !important;
+  max-height: 100% !important;
+  object-fit: contain !important;
+  object-position: center bottom !important;
+  background: transparent !important;
+}
+
+/* Footer: nav in one line, contact block to the right */
+.home-footer__grid {
+  grid-template-columns: .9fr 1.2fr .75fr !important;
+  align-items: center !important;
+}
+
+.home-footer__links {
+  display: flex !important;
+  flex-wrap: nowrap !important;
+  justify-content: center !important;
+  gap: 28px !important;
+  white-space: nowrap !important;
+}
+
+.home-footer__contacts {
+  justify-self: end !important;
+  text-align: left !important;
+  min-width: 190px !important;
+}
+
+/* Footer logo background also blends into footer */
+.home-footer .home-logo,
+.home-footer .home-logo--footer {
+  background: transparent !important;
+}
+
+/* Inner page logo consistency without changing page logic */
+.topbar__inner .brand {
+  min-width: 260px;
+}
