@@ -1162,3 +1162,245 @@ img { display: block; max-width: 100%; }
     width: 164px;
   }
 }
+
+
+/* v16: graphic language updated from approved business card */
+:root {
+  --lp-red: #ee2b21;
+  --lp-red-deep: #c91f18;
+  --lp-card-black: #080b11;
+  --lp-card-gray: #f6f6f7;
+  --lp-card-line: #e4e7ec;
+}
+
+.home-header,
+.topbar,
+.home-footer,
+.footer {
+  background:
+    linear-gradient(90deg, rgba(255,255,255,.028) 1px, transparent 1px) 0 0/72px 72px,
+    linear-gradient(rgba(255,255,255,.022) 1px, transparent 1px) 0 0/72px 72px,
+    linear-gradient(135deg, #05070a, #0a0f17 62%, #12090b);
+}
+
+.home-btn--top,
+.home-btn--red,
+.btn--red {
+  border-radius: 6px;
+  box-shadow:
+    0 14px 30px rgba(238,43,33,.18),
+    inset 0 0 0 1px rgba(255,255,255,.08);
+}
+
+.home-btn--outline,
+.btn--outline {
+  border-radius: 6px;
+  box-shadow: inset 0 0 0 1px rgba(255,255,255,.06);
+}
+
+.home-hero,
+.page-hero {
+  position: relative;
+  overflow: hidden;
+}
+
+.home-hero::before,
+.page-hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(90deg, rgba(255,255,255,.028) 1px, transparent 1px) 0 0/72px 72px,
+    linear-gradient(rgba(255,255,255,.022) 1px, transparent 1px) 0 0/72px 72px;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.home-hero::after,
+.page-hero::after {
+  content: "";
+  position: absolute;
+  top: -12%;
+  right: 6%;
+  width: 30%;
+  height: 130%;
+  background:
+    linear-gradient(115deg, transparent 0 49%, rgba(238,43,33,.98) 49.4%, rgba(238,43,33,.98) 50.4%, transparent 50.8%),
+    linear-gradient(180deg, rgba(238,43,33,.22), rgba(238,43,33,.06));
+  opacity: .85;
+  transform: skewX(-8deg);
+  pointer-events: none;
+  z-index: 0;
+}
+
+.home-hero > *,
+.page-hero > * {
+  position: relative;
+  z-index: 1;
+}
+
+.page-hero .container {
+  position: relative;
+}
+
+.page-hero .container::after {
+  content: "";
+  position: absolute;
+  right: 0;
+  top: -10px;
+  width: min(36vw, 420px);
+  height: min(36vw, 420px);
+  background: url('/assets/hero-spire-clean.png') right center / contain no-repeat;
+  opacity: .17;
+  filter: grayscale(1) brightness(1.4);
+  pointer-events: none;
+}
+
+.home-solutions,
+.content-section,
+.contact,
+.home-contact {
+  background: linear-gradient(180deg, #fcfcfd, #f4f4f6);
+}
+
+.home-card,
+.person-card,
+.profile-box,
+.calc-panel,
+.calc-result,
+.contact-form,
+.home-form {
+  position: relative;
+  overflow: hidden;
+  border-radius: 16px;
+  border: 1px solid var(--lp-card-line);
+  background:
+    linear-gradient(180deg, rgba(255,255,255,1), rgba(252,252,253,1));
+  box-shadow:
+    0 12px 28px rgba(16,24,40,.05),
+    0 1px 0 rgba(255,255,255,.7) inset;
+}
+
+.home-card::after,
+.person-card::after,
+.profile-box::after,
+.calc-panel::after,
+.calc-result::after,
+.contact-form::after,
+.home-form::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 110px;
+  height: 110px;
+  background:
+    linear-gradient(135deg, transparent 0 47%, var(--lp-red) 47.7%, var(--lp-red) 49.4%, transparent 49.8%),
+    linear-gradient(135deg, var(--lp-card-black) 0 68%, transparent 68.4%);
+  opacity: .96;
+  clip-path: polygon(100% 0, 100% 100%, 0 0);
+  pointer-events: none;
+}
+
+.home-card > * ,
+.person-card > * ,
+.profile-box > * ,
+.calc-panel > * ,
+.calc-result > * ,
+.contact-form > * ,
+.home-form > * {
+  position: relative;
+  z-index: 1;
+}
+
+.home-card,
+.person-card {
+  padding-top: 34px;
+}
+
+.home-card > img,
+.person-card .qr {
+  position: relative;
+  z-index: 1;
+}
+
+.home-card > img {
+  background: #fff;
+  padding: 6px;
+  border-radius: 8px;
+  border: 1px solid #f0f2f5;
+}
+
+.home-section-head,
+.section-head {
+  align-items: center;
+}
+
+.home-section-head p,
+.section-head p {
+  max-width: 560px;
+}
+
+.home-approach,
+.home-calculator {
+  position: relative;
+  overflow: hidden;
+}
+
+.home-approach::before,
+.home-calculator::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(90deg, rgba(255,255,255,.03) 1px, transparent 1px) 0 0/72px 72px,
+    linear-gradient(rgba(255,255,255,.025) 1px, transparent 1px) 0 0/72px 72px;
+  pointer-events: none;
+}
+
+.home-approach::after,
+.home-calculator::after {
+  content: "";
+  position: absolute;
+  right: -3%;
+  top: 0;
+  width: 22%;
+  height: 100%;
+  background:
+    linear-gradient(115deg, transparent 0 48%, rgba(238,43,33,.98) 48.5%, rgba(238,43,33,.98) 50.2%, transparent 50.6%),
+    linear-gradient(180deg, rgba(238,43,33,.14), rgba(238,43,33,.32));
+  opacity: .95;
+  pointer-events: none;
+}
+
+.home-approach > *,
+.home-calculator > * {
+  position: relative;
+  z-index: 1;
+}
+
+.home-footer__bottom,
+.footer__bottom {
+  border-top-color: rgba(255,255,255,.10);
+}
+
+.btn--ghost {
+  border-radius: 6px;
+  box-shadow: inset 0 0 0 1px rgba(238,43,33,.12);
+}
+
+.person-card .qr,
+.qr-panel .qr {
+  padding: 8px;
+  background: #fff;
+  border-radius: 10px;
+}
+
+.calc-panel h2,
+.calc-result h2,
+.home-form h3,
+.contact-form h3,
+.person-card h2,
+.profile-box h2 {
+  letter-spacing: -.02em;
+}
