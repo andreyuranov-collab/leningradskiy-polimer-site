@@ -27,7 +27,6 @@
       <div class="container">
         <div class="accent-line"></div>
         <h1>Про нас</h1>
-        <p>Публичные рабочие роли проекта: технический, административный и коммерческий контур.</p>
       </div>
     </section>
     <section class="content-section">
@@ -36,23 +35,24 @@
           <h2>Андрей Уранов</h2>
           <p class='person-role'>Основатель / технический директор</p>
           <p>Технический контур, инженерная логика проекта, материалы, 3D-печать и технологические решения.</p>
-          <img class='qr' src='/assets/qr-uranov.png' alt='QR Андрей Уранов'>
-          <p><a class='btn btn--ghost' href='/about/uranov/'>Персональная страница</a></p>
+          <img class='person-mascot' src='/assets/mascot-tech-approved.png' alt='Маскот технического директора'>
+          <p><button class='btn btn--ghost copy-email' type='button' data-email='uranov@npolp.com'>Написать</button></p>
         </article><article class='person-card'>
           <h2>Алексей Карасёв</h2>
-          <p class='person-role'>Административный контур</p>
+          <p class='person-role'>Генеральный директор</p>
           <p>Организационные вопросы, административное сопровождение и координация рабочих процессов.</p>
-          <img class='qr' src='/assets/qr-karasev.png' alt='QR Алексей Карасёв'>
-          <p><a class='btn btn--ghost' href='/about/karasev/'>Персональная страница</a></p>
+          <img class='person-mascot' src='/assets/mascot-general-approved.png' alt='Маскот генерального директора'>
+          <p><button class='btn btn--ghost copy-email' type='button' data-email='info@npolp.com'>Написать</button></p>
         </article><article class='person-card'>
           <h2>Георгий Машков</h2>
-          <p class='person-role'>Коммерческий контур</p>
+          <p class='person-role'>Коммерческий директор</p>
           <p>Коммуникация с заказчиками, коммерческие запросы, первичное обсуждение задач и проектов.</p>
-          <img class='qr' src='/assets/qr-mashkov.png' alt='QR Георгий Машков'>
-          <p><a class='btn btn--ghost' href='/about/mashkov/'>Персональная страница</a></p>
+          <img class='person-mascot' src='/assets/mascot-commercial-approved.png' alt='Маскот коммерческого директора'>
+          <p><button class='btn btn--ghost copy-email' type='button' data-email='sales@npolp.com'>Написать</button></p>
         </article>
       </div>
     </section>
+      <div id="copy-toast" class="copy-toast" role="status" aria-live="polite"></div>
   </main>
   <footer class="footer">
   <div class="container footer__grid">
@@ -81,5 +81,6 @@
     <span>Политика конфиденциальности</span>
   </div>
 </footer>
+  <script src="/script.js"></script>
 </body>
 </html>

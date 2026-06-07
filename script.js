@@ -213,3 +213,43 @@ document.addEventListener("DOMContentLoaded", () => {
   }
   if (document.getElementById("totalPrice")) calculate();
 });
+
+
+function showCopyToast(message) {
+  const toast = document.getElementById("copy-toast");
+  if (!toast) return;
+  toast.textContent = message;
+  toast.classList.add("is-visible");
+  window.clearTimeout(window.__copyToastTimer);
+  window.__copyToastTimer = window.setTimeout(() => {
+    toast.classList.remove("is-visible");
+  }, 2200);
+}
+
+async function copyEmailToClipboard(email) {
+  if (!email) return;
+  try {
+    if (navigator.clipboard && window.isSecureContext) {
+      await navigator.clipboard.writeText(email);
+    } else {
+      const ta = document.createElement("textarea");
+      ta.value = email;
+      ta.setAttribute("readonly", "");
+      ta.style.position = "fixed";
+      ta.style.left = "-9999px";
+      document.body.appendChild(ta);
+      ta.select();
+      document.execCommand("copy");
+      document.body.removeChild(ta);
+    }
+    showCopyToast("адрес скопирован в буфер обмена");
+  } catch (err) {
+    showCopyToast("не удалось скопировать адрес");
+  }
+}
+
+document.addEventListener("DOMContentLoaded", () => {
+  document.querySelectorAll(".copy-email").forEach((button) => {
+    button.addEventListener("click", () => copyEmailToClipboard(button.dataset.email));
+  });
+});

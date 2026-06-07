@@ -1555,3 +1555,259 @@ img { display: block; max-width: 100%; }
 #solutions {
   scroll-margin-top: 112px;
 }
+
+
+/* v23 about page: approved mascots and write buttons */
+.person-mascot {
+  display: block;
+  width: 100%;
+  max-width: 260px;
+  height: 300px;
+  object-fit: contain;
+  margin: 22px auto 18px;
+  border: 1px solid var(--line);
+  border-radius: 14px;
+  background: #fff;
+}
+
+.person-card .btn {
+  cursor: pointer;
+  font-family: inherit;
+}
+
+/* About/footer nav in one line, matching the main page behavior */
+.footer__grid {
+  grid-template-columns: .9fr 1.2fr .75fr;
+  align-items: center;
+}
+
+.footer__nav {
+  flex-wrap: nowrap;
+  justify-content: center;
+  white-space: nowrap;
+}
+
+.footer__contacts {
+  justify-self: end;
+  text-align: left;
+  min-width: 190px;
+}
+
+.copy-toast {
+  position: fixed;
+  left: 50%;
+  bottom: 28px;
+  transform: translate(-50%, 18px);
+  z-index: 1000;
+  min-width: 280px;
+  max-width: calc(100vw - 40px);
+  padding: 14px 18px;
+  border-radius: 10px;
+  background: #05070a;
+  color: #fff;
+  box-shadow: 0 18px 40px rgba(0,0,0,.25);
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity .2s ease, transform .2s ease;
+  text-align: center;
+  font-weight: 800;
+}
+
+.copy-toast.is-visible {
+  opacity: 1;
+  transform: translate(-50%, 0);
+}
+
+@media (max-width: 960px) {
+  .footer__grid {
+    grid-template-columns: 1fr;
+    align-items: start;
+  }
+
+  .footer__nav {
+    justify-content: flex-start;
+    flex-wrap: wrap;
+  }
+
+  .footer__contacts {
+    justify-self: start;
+  }
+}
+
+
+/* v24: make approved mascots clearly visible on about page */
+.people-grid {
+  align-items: stretch;
+}
+
+.person-card {
+  display: flex;
+  flex-direction: column;
+}
+
+.person-card > p:last-child {
+  margin-top: auto;
+}
+
+.person-mascot {
+  display: block !important;
+  width: 100% !important;
+  max-width: 320px !important;
+  height: 360px !important;
+  object-fit: contain !important;
+  object-position: center bottom !important;
+  margin: 24px auto 22px !important;
+  border: 1px solid var(--line);
+  border-radius: 14px;
+  background: #fff;
+}
+
+
+/* v25: about page header/menu and card polish */
+.topbar .mainnav a,
+.footer__nav a {
+  white-space: nowrap;
+}
+
+.person-mascot {
+  background: #fff !important;
+}
+
+.person-card .copy-email {
+  display: inline-flex;
+  width: auto;
+  min-width: 0;
+  max-width: max-content;
+  padding-left: 22px;
+  padding-right: 22px;
+  align-self: flex-start;
+}
+
+.person-card > p:last-child {
+  display: flex;
+  justify-content: flex-start;
+}
+
+
+/* v26: use explicitly approved commercial + technical mascots, fix write buttons, blend mascot area with page background */
+.person-mascot {
+  display: block !important;
+  width: 100% !important;
+  max-width: 320px !important;
+  height: 360px !important;
+  object-fit: contain !important;
+  object-position: center center !important;
+  margin: 24px auto 18px !important;
+  padding: 0 !important;
+  border: 0 !important;
+  border-radius: 12px;
+  background: #f6f6f7 !important;
+}
+
+.person-card > p:last-child {
+  display: flex !important;
+  justify-content: center !important;
+  margin-top: auto !important;
+}
+
+.person-card .copy-email {
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  width: auto !important;
+  min-width: 0 !important;
+  max-width: none !important;
+  align-self: center !important;
+  padding: 0 18px !important;
+  min-height: 42px !important;
+  line-height: 1 !important;
+  white-space: nowrap !important;
+}
+
+
+/* v27: remove double frame around "Написать" buttons */
+.person-card > p:last-child {
+  display: block !important;
+  margin-top: auto !important;
+}
+
+.person-card .copy-email {
+  display: inline-flex !important;
+  width: auto !important;
+  min-width: 0 !important;
+  max-width: none !important;
+  box-sizing: border-box !important;
+  padding: 0 18px !important;
+  min-height: 42px !important;
+  border: 1px solid var(--red) !important;
+  outline: 0 !important;
+  box-shadow: none !important;
+  background: #fff !important;
+  color: var(--red) !important;
+  border-radius: 7px !important;
+  line-height: 1 !important;
+}
+
+.person-card .copy-email:focus,
+.person-card .copy-email:focus-visible,
+.person-card .copy-email:hover {
+  outline: 0 !important;
+  box-shadow: none !important;
+}
+
+
+/* v28: narrow "Написать" buttons to the text width only */
+.person-card .copy-email {
+  width: fit-content !important;
+  min-width: 0 !important;
+  max-width: fit-content !important;
+  flex: 0 0 auto !important;
+  padding-left: 12px !important;
+  padding-right: 12px !important;
+}
+
+.person-card > p:last-child {
+  width: auto !important;
+  display: block !important;
+}
+
+
+/* v29: exact tight width for "Написать" buttons */
+.person-card .copy-email {
+  display: inline-flex !important;
+  width: max-content !important;
+  min-width: 0 !important;
+  max-width: max-content !important;
+  flex: 0 0 auto !important;
+  box-sizing: content-box !important;
+  padding-left: 6px !important;
+  padding-right: 6px !important;
+  white-space: nowrap !important;
+}
+
+
+/* v30: make all three "Написать" buttons the same narrow width, only around the label */
+.person-card > p:last-child {
+  display: block !important;
+  text-align: center !important;
+}
+
+.person-card .copy-email {
+  display: inline-block !important;
+  width: auto !important;
+  min-width: unset !important;
+  max-width: none !important;
+  flex: none !important;
+  align-self: auto !important;
+  padding: 8px 10px !important;
+  min-height: 0 !important;
+  height: auto !important;
+  line-height: 1.05 !important;
+  white-space: nowrap !important;
+  border: 1px solid var(--red) !important;
+  border-radius: 7px !important;
+  box-shadow: none !important;
+  outline: none !important;
+  background: #fff !important;
+  color: var(--red) !important;
+}
