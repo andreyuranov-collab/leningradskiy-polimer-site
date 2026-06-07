@@ -1549,3 +1549,9 @@ img { display: block; max-width: 100%; }
 .topbar__inner .brand {
   min-width: 260px;
 }
+
+
+/* v22: correct scroll position for the "Решения" anchor under sticky header */
+#solutions {
+  scroll-margin-top: 112px;
+}
