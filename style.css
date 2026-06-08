@@ -1811,3 +1811,115 @@ img { display: block; max-width: 100%; }
   background: #fff !important;
   color: var(--red) !important;
 }
+
+
+/* v32: mobile fixes requested by user */
+@media (max-width: 900px) {
+  html,
+  body {
+    max-width: 100%;
+    overflow-x: hidden;
+  }
+
+  /* Main page footer only: prevent horizontal overflow */
+  .home-footer,
+  .home-footer * {
+    box-sizing: border-box;
+    max-width: 100%;
+  }
+
+  .home-footer__grid {
+    grid-template-columns: minmax(0, 1fr) !important;
+    gap: 22px !important;
+  }
+
+  .home-footer__nav,
+  .home-footer__links {
+    flex-wrap: wrap !important;
+    justify-content: flex-start !important;
+    min-width: 0 !important;
+  }
+
+  .home-footer__contacts {
+    justify-self: start !important;
+    min-width: 0 !important;
+  }
+
+  .home-footer__bottom {
+    flex-direction: column !important;
+    align-items: flex-start !important;
+    min-width: 0 !important;
+  }
+
+  .home-footer img,
+  .home-logo--footer img,
+  .footer__brand img {
+    max-width: 100%;
+    height: auto;
+  }
+
+  /* Main page contact block above footer: stack vertically on mobile instead of squeezing columns */
+  .home-contact__grid {
+    grid-template-columns: minmax(0, 1fr) !important;
+    gap: 24px !important;
+    align-items: start !important;
+  }
+
+  .home-contact__grid > *,
+  .home-contact__copy,
+  .home-form,
+  .home-mascot {
+    min-width: 0 !important;
+    max-width: 100% !important;
+  }
+
+  .home-form__row {
+    grid-template-columns: minmax(0, 1fr) !important;
+  }
+
+  .home-mascot {
+    justify-content: center !important;
+  }
+
+  .home-mascot img {
+    max-width: 160px !important;
+    height: auto !important;
+  }
+
+  /* Main page "Наш подход": stretch vertical cards/backgrounds to full available width */
+  .home-approach__grid,
+  .home-approach__steps,
+  .home-approach__list {
+    grid-template-columns: minmax(0, 1fr) !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    align-items: stretch !important;
+  }
+
+  .home-approach__steps > *,
+  .home-approach__list > *,
+  .home-step,
+  .approach-step,
+  .home-approach .step-card,
+  .home-approach .home-card {
+    width: 100% !important;
+    max-width: 100% !important;
+    min-width: 0 !important;
+    justify-self: stretch !important;
+    box-sizing: border-box !important;
+  }
+
+  /* Inner pages: same mobile header behavior as approved on home page */
+  .topbar {
+    position: sticky;
+    top: 0;
+    transition: transform .22s ease, opacity .22s ease;
+    will-change: transform;
+  }
+
+  .topbar.is-mobile-hidden {
+    transform: translateY(-105%);
+    opacity: 0;
+    pointer-events: none;
+  }
+}
