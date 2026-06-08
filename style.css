@@ -1923,3 +1923,10 @@ img { display: block; max-width: 100%; }
     pointer-events: none;
   }
 }
+
+
+/* v34: adjust only the intro text width in "Наш подход" to match "Наши решения" */
+.home-approach__copy > p {
+  max-width: 560px !important;
+  line-height: 1.45;
+}
