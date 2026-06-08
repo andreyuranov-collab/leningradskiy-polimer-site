@@ -1930,3 +1930,27 @@ img { display: block; max-width: 100%; }
   max-width: 560px !important;
   line-height: 1.45;
 }
+
+
+/* v36: soften the right-side transition in the mobile "Наш подход" section */
+@media (max-width: 900px) {
+  .home-approach::after {
+    right: -10% !important;
+    width: 38% !important;
+    background:
+      linear-gradient(90deg,
+        rgba(82, 10, 10, 0) 0%,
+        rgba(120, 16, 16, 0.10) 24%,
+        rgba(150, 20, 20, 0.18) 48%,
+        rgba(190, 28, 28, 0.24) 70%,
+        rgba(238, 43, 33, 0.30) 100%
+      ),
+      linear-gradient(118deg,
+        transparent 0 61%,
+        rgba(238, 43, 33, 0.82) 61.4%,
+        rgba(238, 43, 33, 0.82) 63.2%,
+        transparent 63.7%
+      ) !important;
+    opacity: 0.92 !important;
+  }
+}
