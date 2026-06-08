@@ -1954,3 +1954,102 @@ img { display: block; max-width: 100%; }
     opacity: 0.92 !important;
   }
 }
+
+
+/* v39: personal profile pages — contacts moved to hero, lower duplicate block removed */
+.profile-hero-contacts {
+  display: grid;
+  gap: 7px;
+  margin: 20px 0 20px;
+  color: rgba(255,255,255,.86);
+  font-size: 16px;
+}
+
+.profile-hero-contacts p {
+  margin: 0 !important;
+}
+
+.profile-hero-contacts strong {
+  color: #fff;
+}
+
+.profile-hero-contacts a {
+  color: rgba(255,255,255,.9);
+  text-decoration: none;
+}
+
+.profile-hero-contacts a:hover {
+  color: #fff;
+}
+
+.profile-mascot-panel {
+  border: 1px solid rgba(255,255,255,.14);
+  border-radius: 18px;
+  padding: 28px;
+  text-align: center;
+  background: rgba(255,255,255,.05);
+}
+
+.profile-mascot {
+  width: 100% !important;
+  max-width: 260px !important;
+  height: 300px !important;
+  object-fit: contain !important;
+  object-position: center bottom !important;
+  margin: 0 auto !important;
+  border: 1px solid var(--line) !important;
+  border-radius: 14px !important;
+  background: #fff !important;
+}
+
+
+/* v40: final personal page adjustments */
+.topbar__inner {
+  justify-content: flex-start;
+}
+
+.topbar__inner .mainnav {
+  margin-left: 46px;
+  margin-right: 0;
+}
+
+/* personal pages: visible tower artwork in the left hero block */
+.profile-hero-copy--with-spire {
+  position: relative;
+  overflow: hidden;
+  isolation: isolate;
+  padding: 24px 26px 28px 28px;
+  border-radius: 18px;
+}
+
+.profile-hero-spire-bg {
+  position: absolute !important;
+  z-index: -1 !important;
+  right: -20px;
+  top: -44px;
+  width: 72%;
+  height: calc(100% + 88px);
+  object-fit: cover;
+  object-position: center;
+  opacity: .58;
+  filter: contrast(1.12) brightness(.95);
+  pointer-events: none;
+}
+
+.profile-hero-copy--with-spire::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  background: linear-gradient(90deg,
+    rgba(3,8,18,.92) 0%,
+    rgba(3,8,18,.82) 38%,
+    rgba(3,8,18,.42) 72%,
+    rgba(3,8,18,.72) 100%);
+  pointer-events: none;
+}
+
+.profile-hero-copy--with-spire > *:not(.profile-hero-spire-bg) {
+  position: relative;
+  z-index: 1;
+}
