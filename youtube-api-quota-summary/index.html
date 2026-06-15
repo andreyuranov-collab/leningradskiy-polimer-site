@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="noindex,nofollow">
+  <title>YouTube API Quota Request Summary</title>
+  <meta name="description" content="Quota request summary and suggested form text.">
+  <link rel="stylesheet" href="/youtube-api-assets/youtube-api-evidence.css">
+</head>
+<body>
+  <div class="wrap">
+    <header class="top">
+      <div class="brand"><div class="mark" aria-hidden="true"></div><div><b>LENINGRADSKIY POLIMER</b><span>Internal API research documentation</span></div></div>
+      <div class="badge">Private branch evidence page</div>
+    </header>
+    
+<main>
+  <div class="redline"></div>
+  <h1>YouTube API Quota Request Summary</h1>
+  <p class="lead">Prepared for completing the YouTube API Services Audit and Quota Extension Form.</p>
+
+  <h2>Recommended form values</h2>
+  <table class="table">
+    <tr><th>Form field</th><th>Recommended value</th></tr>
+    <tr><td>API Client name</td><td>LP Comment Research Parser</td></tr>
+    <tr><td>Public accessibility</td><td>No - private internal research tool</td></tr>
+    <tr><td>OAuth 2.0</td><td>No</td></tr>
+    <tr><td>Use case category</td><td>Internal Company Tool / Analytics & Reporting / Education & Research</td></tr>
+    <tr><td>Requested daily quota</td><td>100,000 units/day</td></tr>
+    <tr><td>Peak per minute quota</td><td>120-300 requests/minute</td></tr>
+  </table>
+
+  <h2>Detailed justification text</h2>
+  <p>The requested quota increase is needed for a private internal research and analytics tool that collects public YouTube comments and replies from selected technical channels and videos for offline analysis.</p>
+  <p>The current default quota is insufficient for complete channel-level research. A single technical channel may contain 200+ videos. Collecting public top-level comments requires paginated youtube.commentThreads.list requests, and collecting public replies requires additional paginated youtube.comments.list requests. Videos with active technical discussions can require hundreds of API requests when all public replies are included.</p>
+  <p>The API Client uses only read-only endpoints: youtube.channels.list, youtube.playlistItems.list, youtube.commentThreads.list, and youtube.comments.list. It does not upload, modify, delete, moderate, rate, or publish YouTube content. It does not use OAuth and does not access private user data.</p>
+  <p>The data is used for internal topic analysis, clustering recurring user problems, identifying technical issues in 3D printing discussions, and generating offline research reports. The tool includes checkpoint/resume behavior, duplicate removal, local storage, and error logging to avoid unnecessary repeated requests.</p>
+</main>
+
+    <footer class="footer">
+      <div>© 2026 Leningradskiy Polimer. This page is prepared for YouTube API Services quota and compliance review.</div>
+      <div class="legal-links"><a href="/youtube-api-research/">API Research Tool</a><a href="/youtube-api-privacy/">Privacy Policy</a><a href="/youtube-api-terms/">Terms of Use</a></div>
+      <div class="muted">Suggested URL after branch deployment: https://leningradskiy-polimer.pages.dev/youtube-api-quota-summary/</div>
+    </footer>
+  </div>
+</body>
+</html>

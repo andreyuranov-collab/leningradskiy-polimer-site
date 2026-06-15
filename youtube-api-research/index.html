@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="noindex,nofollow">
+  <title>LP Comment Research Parser - API Client Overview</title>
+  <meta name="description" content="Private internal YouTube Data API research tool overview.">
+  <link rel="stylesheet" href="/youtube-api-assets/youtube-api-evidence.css">
+</head>
+<body>
+  <div class="wrap">
+    <header class="top">
+      <div class="brand"><div class="mark" aria-hidden="true"></div><div><b>LENINGRADSKIY POLIMER</b><span>Internal API research documentation</span></div></div>
+      <div class="badge">Private branch evidence page</div>
+    </header>
+    
+<main>
+  <section class="hero">
+    <div>
+      <div class="redline"></div>
+      <h1>LP Comment Research Parser</h1>
+      <p class="lead">Private internal research and analytics tool for collecting public YouTube comments from selected technical channels and videos through YouTube Data API v3.</p>
+      <p class="muted">The API Client is used internally for topic analysis, user problem clustering, technical discussion analysis, product research, and market research in 3D printing and additive manufacturing.</p>
+    </div>
+    <aside class="panel">
+      <h3>API Client status</h3>
+      <ul>
+        <li>Access model: private/internal, not public</li>
+        <li>Authentication: API key only, no OAuth</li>
+        <li>API scope: read-only public data</li>
+        <li>Data processing: offline/local analysis</li>
+        <li>Output: JSONL/CSV/XLSX/Markdown reports</li>
+      </ul>
+    </aside>
+  </section>
+
+  <section class="grid">
+    <div class="card"><strong>What the tool collects</strong><span class="muted">Public video metadata, public top-level comments, public replies, timestamps, like counts, video IDs, comment IDs, and parent-child relationships.</span></div>
+    <div class="card"><strong>What the tool does not do</strong><span class="muted">It does not upload, modify, delete, moderate, rate, or publish YouTube content. It does not access private user data.</span></div>
+    <div class="card"><strong>How the data is used</strong><span class="muted">Offline topic clustering, recurring problem analysis, technical request extraction, and internal research reporting.</span></div>
+    <div class="card"><strong>Reliability safeguards</strong><span class="muted">Checkpoint/resume behavior, incremental local writes, duplicate removal, and per-video/per-page error logs.</span></div>
+  </section>
+
+  <h2>Read-only YouTube Data API endpoints</h2>
+  <table class="table">
+    <tr><th>Endpoint</th><th>Purpose</th></tr>
+    <tr><td>youtube.channels.list</td><td>Resolve a public channel and retrieve channel metadata.</td></tr>
+    <tr><td>youtube.playlistItems.list</td><td>Retrieve public videos from the channel uploads playlist.</td></tr>
+    <tr><td>youtube.commentThreads.list</td><td>Retrieve public top-level comment threads for selected videos.</td></tr>
+    <tr><td>youtube.comments.list</td><td>Retrieve public replies inside selected comment threads.</td></tr>
+  </table>
+
+  <h2>Quota extension rationale</h2>
+  <p>Complete channel-level research may require crawling hundreds of videos. Each comments page and each replies page is paginated, and active technical videos often contain many replies. The default daily quota is not sufficient for full public comment and replies collection for a complete technical channel.</p>
+  <p><span class="pill">Requested daily quota: 100,000 units/day</span><span class="pill">Peak rate target: moderate / non-aggressive</span><span class="pill">Use case: internal analytics and research</span></p>
+</main>
+
+    <footer class="footer">
+      <div>© 2026 Leningradskiy Polimer. This page is prepared for YouTube API Services quota and compliance review.</div>
+      <div class="legal-links"><a href="/youtube-api-research/">API Research Tool</a><a href="/youtube-api-privacy/">Privacy Policy</a><a href="/youtube-api-terms/">Terms of Use</a></div>
+      <div class="muted">Suggested URL after branch deployment: https://leningradskiy-polimer.pages.dev/youtube-api-research/</div>
+    </footer>
+  </div>
+</body>
+</html>
