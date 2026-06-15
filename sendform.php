@@ -12,14 +12,14 @@ if (!$name || !$email || !$message) {
     exit("Заполните все поля");
 }
 
-$to = "info@npolp.ru";
+$to = "info@npolp.com";
 $subject = "Запрос от $name ($email).";
 
 $text = "Имя: $name\n";
 $text .= "E-mail: $email\n\n";
 $text .= "Сообщение:\n$message";
 
-$headers = "From: auto@npolp.ru\r\n";
+$headers = "From: auto@npolp.com\r\n";
 $headers .= "Reply-To: $email\r\n";
 $headers .= "Content-Type: text/plain; charset=UTF-8\r\n";
 
