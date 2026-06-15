@@ -150,14 +150,14 @@
           </ul>
         </div>
 
-        <form class="home-form">
+        <form class="home-form" id="contact-form" action="sendform.php" method="POST">
           <h3>Отправьте запрос</h3>
           <div class="home-form__row">
-            <input type="text" placeholder="Ваше имя">
-            <input type="email" placeholder="E-mail">
+            <input type="text" name="name" placeholder="Ваше имя">
+            <input type="email" name="email" placeholder="E-mail">
           </div>
-          <textarea placeholder="Опишите задачу"></textarea>
-          <button class="home-btn home-btn--red home-btn--full" type="button" onclick="showFormMessage()">Отправить запрос</button>
+          <textarea placeholder="Опишите задачу" name="message"></textarea>
+          <button class="home-btn home-btn--red home-btn--full" type="submit">Отправить запрос</button>
           <p id="form-message" class="form-message"></p>
         </form>
 
@@ -199,5 +199,6 @@
   </footer>
 
   <script src="/script.js"></script>
+  <script src="sendformajax.js"></script>
 </body>
 </html>
