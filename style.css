@@ -2083,3 +2083,32 @@ img { display: block; max-width: 100%; }
   color: var(--red);
   font-weight: 800;
 }
+
+
+/* v43: footer legal links grouping */
+.footer__legal-links,
+.home-footer__legal-links {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+}
+
+.home-footer__bottom .footer__legal-links,
+.footer__bottom .footer__legal-links {
+  margin-left: auto;
+}
+
+@media (max-width: 700px) {
+  .footer__legal-links,
+  .home-footer__legal-links {
+    width: 100%;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+    gap: 10px 18px;
+  }
+
+  .home-footer__bottom .footer__legal-links,
+  .footer__bottom .footer__legal-links {
+    margin-left: 0;
+  }
+}

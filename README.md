@@ -267,3 +267,17 @@ QR-коды пересобраны под домен:
 
 Форма обратной связи:
 - подключены загруженные пользователем эталонные файлы `index.html`, `sendformajax.js`, `sendform.php` для корректной работы формы на хостинге.
+
+
+## v43
+
+Footer правки:
+- убрана дублирующаяся ссылка «Правообладатель»;
+- ссылка «Правообладатель» придвинута к «Политика конфиденциальности» и сгруппирована с ней в правой части footer.
+
+
+## v44
+
+Calculator header:
+- removed the “Обсудить задачу” CTA button from the calculator page header;
+- no other site pages or content were changed.
