@@ -2053,3 +2053,33 @@ img { display: block; max-width: 100%; }
   position: relative;
   z-index: 1;
 }
+
+
+/* v42: rightsholder page and footer legal link */
+.footer__bottom a,
+.home-footer__bottom a {
+  color: inherit;
+}
+
+.footer__bottom a:hover,
+.home-footer__bottom a:hover {
+  color: #fff;
+}
+
+.legal-page {
+  max-width: 920px;
+}
+
+.legal-box {
+  line-height: 1.7;
+}
+
+.legal-box h2 {
+  margin: 26px 0 12px;
+  font-size: 30px;
+}
+
+.legal-box a {
+  color: var(--red);
+  font-weight: 800;
+}
