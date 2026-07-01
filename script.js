@@ -297,3 +297,30 @@ document.addEventListener("DOMContentLoaded", () => {
   window.addEventListener("resize", updateInnerHeader);
   document.addEventListener("DOMContentLoaded", updateInnerHeader);
 })();
+
+
+
+/* v45: store catalog filters */
+(() => {
+  const filterButtons = document.querySelectorAll('[data-filter]');
+  const products = document.querySelectorAll('.store-product');
+
+  if (!filterButtons.length || !products.length) {
+    return;
+  }
+
+  filterButtons.forEach((button) => {
+    button.addEventListener('click', () => {
+      const filter = button.dataset.filter;
+
+      filterButtons.forEach((item) => item.classList.remove('active'));
+      button.classList.add('active');
+
+      products.forEach((product) => {
+        const kinds = product.dataset.kind || '';
+        const isVisible = filter === 'all' || kinds.split(' ').includes(filter);
+        product.classList.toggle('is-hidden', !isVisible);
+      });
+    });
+  });
+})();

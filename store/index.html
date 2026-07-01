@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>LP Store — филамент для 3D-печати</title>
+  <meta name="description" content="Интернет-магазин филамента НПО «ЛЕНИНГРАДСКИЙ ПОЛИМЕР»: базовые, инженерные и композиционные материалы для 3D-печати.">
+  <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+  <header class="store-header" id="top">
+    <div class="store-container store-header__inner">
+      <a class="store-logo" href="/">
+        <img src="/assets/lp-approved-logo-transparent.png" alt="ЛЕНИНГРАДСКИЙ ПОЛИМЕР">
+      </a>
+      <nav class="store-nav" aria-label="Навигация магазина">
+        <a href="/">Главная</a>
+        <a href="/store/">ИМ</a>
+        <a href="#catalog">Каталог</a>
+        <a href="#selection">Подбор</a>
+        <a href="#b2b">B2B</a>
+        <a href="#quality">Качество</a>
+        <a href="#contact">Запрос</a>
+      </nav>
+      <a class="store-btn store-btn--small store-btn--red" href="#catalog">К каталогу</a>
+    </div>
+  </header>
+
+  <main>
+    <section class="store-hero">
+      <div class="store-container store-hero__grid">
+        <div class="store-hero__copy">
+          <div class="store-redline"></div>
+          <p class="store-eyebrow">store.npolp.com</p>
+          <h1>Интернет-магазин филамента для инженерной 3D-печати</h1>
+          <p class="store-lead">
+            Базовые, технические и композиционные материалы НПО «ЛЕНИНГРАДСКИЙ ПОЛИМЕР».
+            Подбираем филамент под задачу, режим печати, оборудование и требования к детали.
+          </p>
+          <div class="store-hero__actions">
+            <a class="store-btn store-btn--red" href="#catalog">Посмотреть материалы</a>
+            <a class="store-btn store-btn--ghost" href="#selection">Помочь с подбором</a>
+          </div>
+          <div class="store-hero__notes">
+            <span>честный вес катушки</span>
+            <span>техкарты и параметры печати</span>
+            <span>партии для B2B</span>
+          </div>
+        </div>
+        <div class="store-hero__visual">
+          <img class="store-hero__spire" src="/assets/hero-spire-clean-blend.png" alt="Инженерная графика">
+          <div class="store-hero__panel">
+            <span>Материал недели</span>
+            <strong>PETG Industrial</strong>
+            <p>Стабильный материал для функциональных деталей, оснастки, прототипов и малых серий.</p>
+            <a href="#petg">Подробнее</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="store-categories" aria-label="Категории">
+      <div class="store-container store-categories__grid">
+        <article>
+          <span>01</span>
+          <h3>Базовые материалы</h3>
+          <p>PLA, PETG, ABS для прототипов, корпусов, оснастки и повседневной печати.</p>
+        </article>
+        <article>
+          <span>02</span>
+          <h3>Техническая линейка</h3>
+          <p>TPU A95, ASA, PP, PA, PC‑ABS и другие материалы под условия эксплуатации.</p>
+        </article>
+        <article>
+          <span>03</span>
+          <h3>Композиты</h3>
+          <p>CF/GF‑наполненные материалы для жёсткости, стабильности формы и специальных задач.</p>
+        </article>
+        <article>
+          <span>04</span>
+          <h3>Под заказ</h3>
+          <p>Цвет, свойства, пробники и производственные партии под конкретный проект.</p>
+        </article>
+      </div>
+    </section>
+
+    <section id="catalog" class="store-section store-section--dark">
+      <div class="store-container">
+        <div class="store-section-head">
+          <div>
+            <div class="store-redline store-redline--small"></div>
+            <h2>Каталог филамента</h2>
+          </div>
+          <p>Стартовая витрина магазина. Цены и наличие можно уточнить запросом — ассортимент будет расширяться по мере запуска производства и подтверждения техкарт.</p>
+        </div>
+
+        <div class="store-filters" aria-label="Фильтры">
+          <button class="active" type="button" data-filter="all">Все</button>
+          <button type="button" data-filter="base">Базовые</button>
+          <button type="button" data-filter="tech">Технические</button>
+          <button type="button" data-filter="composite">Композиты</button>
+          <button type="button" data-filter="b2b">B2B</button>
+        </div>
+
+        <div class="store-products">
+          <article class="store-product" data-kind="base">
+            <div class="store-product__top">
+              <span class="store-badge">Стартовая линейка</span>
+              <span class="store-status">скоро</span>
+            </div>
+            <h3>LP PLA Engineering</h3>
+            <p>Материал для прототипов, макетов, демонстрационных изделий и деталей с умеренными нагрузками.</p>
+            <ul>
+              <li>Катушка: 1 кг</li>
+              <li>Цвета: базовые + под заказ</li>
+              <li>Документы: паспорт партии / рекомендации печати</li>
+            </ul>
+            <a class="store-product__link" href="#contact">Запросить наличие</a>
+          </article>
+
+          <article class="store-product" id="petg" data-kind="base">
+            <div class="store-product__top">
+              <span class="store-badge">Функциональные детали</span>
+              <span class="store-status store-status--hot">приоритет</span>
+            </div>
+            <h3>LP PETG Industrial</h3>
+            <p>Практичный материал для корпусов, крепежа, оснастки, прототипов и малосерийных изделий.</p>
+            <ul>
+              <li>Катушка: 1 кг / B2B формат по запросу</li>
+              <li>Акцент: стабильная печать и повторяемость</li>
+              <li>Подходит для печати функциональных деталей</li>
+            </ul>
+            <a class="store-product__link" href="#contact">Запросить наличие</a>
+          </article>
+
+          <article class="store-product" data-kind="base tech">
+            <div class="store-product__top">
+              <span class="store-badge">Технический пластик</span>
+              <span class="store-status">скоро</span>
+            </div>
+            <h3>LP ABS Technical</h3>
+            <p>Материал для деталей, где важны термостойкость, постобработка и технологическая предсказуемость.</p>
+            <ul>
+              <li>Катушка: 1 кг</li>
+              <li>Рекомендация: закрытая камера печати</li>
+              <li>Подходит для корпусов и инженерных деталей</li>
+            </ul>
+            <a class="store-product__link" href="#contact">Запросить наличие</a>
+          </article>
+
+          <article class="store-product" data-kind="tech">
+            <div class="store-product__top">
+              <span class="store-badge">Гибкие детали</span>
+              <span class="store-status">в разработке</span>
+            </div>
+            <h3>LP TPU A95</h3>
+            <p>Эластичный материал для демпферов, прокладок, защитных элементов и гибких функциональных изделий.</p>
+            <ul>
+              <li>Катушка: 1 кг</li>
+              <li>Требует аккуратной настройки подачи</li>
+              <li>Техкарта под конкретный принтер — по запросу</li>
+            </ul>
+            <a class="store-product__link" href="#contact">Обсудить применение</a>
+          </article>
+
+          <article class="store-product" data-kind="tech composite">
+            <div class="store-product__top">
+              <span class="store-badge">Инженерный композит</span>
+              <span class="store-status">проектная поставка</span>
+            </div>
+            <h3>LP PA‑CF</h3>
+            <p>Композиционный материал для жёстких деталей, оснастки и изделий, где важна стабильность геометрии.</p>
+            <ul>
+              <li>Поставка: по запросу</li>
+              <li>Рекомендация: сушка перед печатью</li>
+              <li>Подбор режимов под оборудование клиента</li>
+            </ul>
+            <a class="store-product__link" href="#contact">Запросить консультацию</a>
+          </article>
+
+          <article class="store-product" data-kind="b2b composite">
+            <div class="store-product__top">
+              <span class="store-badge">B2B партия</span>
+              <span class="store-status">по ТЗ</span>
+            </div>
+            <h3>LP Custom Compound</h3>
+            <p>Материал под задачу: цвет, наполнитель, целевые свойства, пробная партия и технологическое сопровождение.</p>
+            <ul>
+              <li>Формат: от тестовой партии до серии</li>
+              <li>Цвет и свойства согласуются заранее</li>
+              <li>Минимальный объём — по загрузке линии</li>
+            </ul>
+            <a class="store-product__link" href="#contact">Отправить ТЗ</a>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="selection" class="store-section">
+      <div class="store-container store-selection">
+        <div class="store-selection__copy">
+          <div class="store-redline store-redline--small"></div>
+          <h2>Подбор материала под задачу</h2>
+          <p>
+            Магазин не ограничивается карточками товаров. Если задача нестандартная, мы поможем выбрать материал,
+            режимы печати и формат поставки: от пробника до партии для производства.
+          </p>
+        </div>
+        <div class="store-selection__steps">
+          <div><strong>01</strong><span>Опишите деталь, нагрузку и условия эксплуатации.</span></div>
+          <div><strong>02</strong><span>Мы предложим материал, альтернативы и ограничения.</span></div>
+          <div><strong>03</strong><span>Согласуем пробную печать, техкарту или поставку филамента.</span></div>
+        </div>
+      </div>
+    </section>
+
+    <section id="b2b" class="store-section store-section--black">
+      <div class="store-container store-b2b">
+        <div>
+          <div class="store-redline store-redline--small"></div>
+          <h2>B2B-поставки и производственные партии</h2>
+          <p>
+            Для мастерских, сервисных бюро, производственных участков и лабораторий доступны расширенные форматы:
+            крупные катушки, повторяемые партии, подбор цвета и материала под изделие.
+          </p>
+        </div>
+        <div class="store-b2b__cards">
+          <article>
+            <h3>Крупные катушки</h3>
+            <p>Форматы 3–15 кг для длительной печати и производственных задач.</p>
+          </article>
+          <article>
+            <h3>Пробники</h3>
+            <p>Небольшие партии для тестов перед закупкой и запуском серии.</p>
+          </article>
+          <article>
+            <h3>Кастомизация</h3>
+            <p>Цвет, наполнитель и свойства под конкретный проект.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="quality" class="store-section">
+      <div class="store-container store-quality">
+        <div class="store-section-head">
+          <div>
+            <div class="store-redline store-redline--small"></div>
+            <h2>Качество и документация</h2>
+          </div>
+          <p>Мы строим магазин вокруг инженерной ответственности: понятные материалы, проверяемые партии и рекомендации по применению.</p>
+        </div>
+        <div class="store-quality__grid">
+          <div><img src="/assets/icon-feature-1.svg" alt=""><strong>Контроль сырья</strong><span>Входной контроль и фиксация параметров партии.</span></div>
+          <div><img src="/assets/icon-feature-2.svg" alt=""><strong>Техкарты</strong><span>Рекомендации по печати и условиям применения.</span></div>
+          <div><img src="/assets/icon-feature-3.svg" alt=""><strong>Повторяемость</strong><span>Стабильность партии важнее красивого описания.</span></div>
+          <div><img src="/assets/icon-feature-4.svg" alt=""><strong>Инженерная поддержка</strong><span>Помощь с материалом, режимами и дефектами печати.</span></div>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact" class="store-contact">
+      <div class="store-container store-contact__grid">
+        <div>
+          <div class="store-redline store-redline--small"></div>
+          <h2>Запросить наличие или подбор</h2>
+          <p>Напишите, какой материал нужен, для какого изделия, на каком оборудовании планируется печать и какой объём интересует.</p>
+          <ul>
+            <li>+7 (800) 234-49-97</li>
+            <li>info@npolp.com</li>
+            <li>Санкт-Петербург</li>
+          </ul>
+        </div>
+        <form class="store-form" action="mailto:info@npolp.com" method="post" enctype="text/plain">
+          <label>
+            Имя
+            <input name="name" type="text" placeholder="Ваше имя">
+          </label>
+          <label>
+            E-mail или телефон
+            <input name="contact" type="text" placeholder="Как с вами связаться">
+          </label>
+          <label>
+            Материал / задача
+            <textarea name="message" placeholder="Например: PETG для корпусов, PA-CF для оснастки, партия для сервиса печати"></textarea>
+          </label>
+          <button class="store-btn store-btn--red store-btn--full" type="submit">Отправить запрос</button>
+          <p>Форма открывает отправку через почтовый клиент. Рабочую серверную отправку подключим отдельно при запуске магазина.</p>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <footer class="store-footer">
+    <div class="store-container store-footer__grid">
+      <div>
+        <a class="store-logo store-logo--footer" href="/">
+          <img src="/assets/lp-approved-logo-transparent.png" alt="ЛЕНИНГРАДСКИЙ ПОЛИМЕР">
+        </a>
+        <p>Филамент и инженерные материалы для 3D-печати.</p>
+      </div>
+      <nav>
+        <a href="/">Главная</a>
+        <a href="/store/">ИМ</a>
+        <a href="#catalog">Каталог</a>
+        <a href="#selection">Подбор</a>
+        <a href="#b2b">B2B</a>
+        <a href="#quality">Качество</a>
+        <a href="#contact">Запрос</a>
+      </nav>
+      <div class="store-footer__contacts">
+        <span>+7 (800) 234-49-97</span>
+        <span>info@npolp.com</span>
+        <span>store.npolp.com</span>
+      </div>
+    </div>
+    <div class="store-container store-footer__bottom">
+      <span>© 2026 Ленинградский Полимер</span>
+      <div>
+        <a href="https://npolp.com/rightsholder/">Правообладатель</a>
+        <span>Политика конфиденциальности</span>
+      </div>
+    </div>
+  </footer>
+
+  <script src="/script.js"></script>
+</body>
+</html>
